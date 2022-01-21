@@ -119,7 +119,7 @@ public class OrderServlet extends HttpServlet {
         Session sessionMail = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "2024");
+                return new PasswordAuthentication("post2074@gmail.com", "");
             }
 
         });
