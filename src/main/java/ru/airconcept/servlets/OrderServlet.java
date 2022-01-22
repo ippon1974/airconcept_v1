@@ -119,7 +119,7 @@ public class OrderServlet extends HttpServlet {
         Session sessionMail = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "");
+                return new PasswordAuthentication("post2074@gmail.com", "k4b8c321974");
             }
 
         });
@@ -182,11 +182,11 @@ public class OrderServlet extends HttpServlet {
                     allTotalCostsNDC = allTotalCostsNDC.add (costCount);
                     listBuilder.append ("<tr>");
                     if(mList.get(i).getNameMaterial().equals ("Латунь")){
-                    listBuilder.append("<td>").append("<img src=http://localhost:8080/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    listBuilder.append("<td>").append("<img src=").append("http://23.105.246.179:8080/").append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     if(mList.get(i).getNameMaterial().equals ("Медь")){
-                        listBuilder.append("<td>").append("<img src=http://localhost:8080/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     if(mList.get(i).getNameMaterial().equals ("Сталь")){
-                        listBuilder.append("<td>").append("<img src=http://localhost:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     listBuilder.append ("<td>").append ("Вентиляционная решетка ").append(mList.get(i).getNameTemplate()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getNameMaterial()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм ").append (mList.get (i).getHeight ()).append ("мм ") .append (mList.get (i).getSize()).append ("мм ") .append("</td>");
