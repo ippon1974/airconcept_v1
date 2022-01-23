@@ -34,11 +34,10 @@ public class GrillsServlet extends HttpServlet {
     private ModelTax tax;
     private TaxService taxService;
 
+    private ModelCart modelCart;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-//        String uri = req.getRequestURI();
-//        String action = req.getParameter("action");
 
         if(req.getQueryString()==null){
             doGet_Def(req, resp);
@@ -62,10 +61,65 @@ public class GrillsServlet extends HttpServlet {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String dt = myDateObj.format(myFormatObj);
 
+
+        // Формируем строку запроса QueryString
+        StringBuilder queryStirngCart = new StringBuilder();
+        queryStirngCart.append ("template=")
+                .append(req.getParameter("template"))
+                .append ("&materialid=")
+                .append(req.getParameter("materialid"))
+                .append("&size=")
+                .append (req.getParameter("size"))
+                .append ("&width=")
+                .append (req.getParameter("width"))
+                .append ("&height=")
+                .append (req.getParameter("height"));
+        req.setAttribute ("queryStirngCart", queryStirngCart);
+
         String template = req.getParameter("template"); // параметр из строки запроса который переделан модулем rewrate
         HttpSession session = req.getSession();
         CartService cartService = (CartService) session.getAttribute ("cartService");
         req.setAttribute ("cartService", cartService);
+
+        // Проверякм количество товаров в корзине
+        if(cartService != null){
+            List<ModelCart> count = cartService.list();
+            req.setAttribute ("count", count.size ());
+        }
+
+        //////////////////////
+        // Проверякм дубликаты в корзине
+        if(cartService != null){
+            List<ModelCart> rowProduct = cartService.list();
+            boolean isStr = false;
+            for (int i = 0; i < rowProduct.size(); i++) {
+                StringBuilder sb = new StringBuilder ();
+                sb.append ("template=")
+                        .append (rowProduct.get (i).getImg())
+                        .append ("&materialid=")
+                        .append (rowProduct.get (i).getTypematerial())
+                        .append ("&size=")
+                        .append (rowProduct.get (i).getSize())
+                        .append ("&width=")
+                        .append (rowProduct.get (i).getWidth())
+                        .append ("&height=")
+                        .append (rowProduct.get (i).getHeight());
+
+                String Str1 = new String(sb);
+                String Str2 = new String(queryStirngCart);
+                System.out.println ("Trim "  + Str1.trim().equals (Str2.trim ()));
+
+                if(Str1.trim().equals (Str2.trim ())){
+                    isStr = true;
+                }else {
+                    isStr = false;
+                }
+
+            }
+            req.setAttribute ("isStr", isStr);
+            req.setAttribute ("rowProduct", rowProduct);
+        }
+
 
         grillService = new GrillService(ConnectionFactory.getInstance());
         List<ModelGrill> listGrills = grillService.getAll();
@@ -129,7 +183,7 @@ public class GrillsServlet extends HttpServlet {
         if(material != null || size !=null) {
             modelCalc = calcService.getCostMatStore (materialID, sizeID);
             req.setAttribute ("modelCalc", modelCalc);
-            System.out.println (modelCalc.getCostmcut() + " " + modelCalc.getMname () + " " + modelCalc.getCost() + " " + modelCalc.getSize());
+//            System.out.println (modelCalc.getCostmcut() + " " + modelCalc.getMname () + " " + modelCalc.getCost() + " " + modelCalc.getSize());
         }
 
         taxService = new TaxService(ConnectionFactory.getInstance());
@@ -172,6 +226,7 @@ public class GrillsServlet extends HttpServlet {
             req.setAttribute ("total", total);
             req.setAttribute ("totalNdc", totalNdc);
 
+            // Пишим данные в сессию
             session.setAttribute("transliterationsSession", modelGrill.getGtransliterations());
             session.setAttribute("modelNameSession", modelGrill.getGname());
             session.setAttribute("materialSession", modelCalc.getMname());
@@ -182,7 +237,22 @@ public class GrillsServlet extends HttpServlet {
             session.setAttribute("typematerialSession", typematerialID);
             session.setAttribute("totalSession",totalNdc);
             session.setAttribute("dtSession",dt);
+
+            // Формируем строку для сравнения в корзине
+            StringBuilder cartStringGoods = new StringBuilder ();
+            cartStringGoods.append ("template=")
+                    .append (modelGrill.getGtransliterations())
+                    .append ("&materialid=")
+                    .append(typematerialID)
+                    .append("&size=")
+                    .append (modelCalc.getSize())
+                    .append ("&width=")
+                    .append (widthID)
+                    .append ("&height=")
+                    .append (heightID);
+            req.setAttribute ("cartStringGoods", cartStringGoods);
         }
         req.getRequestDispatcher ("/WEB-INF/view/result1.jsp").forward (req, resp);
+//        resp.sendRedirect("/successsubmit");
     }
 }

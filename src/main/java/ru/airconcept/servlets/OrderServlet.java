@@ -214,7 +214,8 @@ public class OrderServlet extends HttpServlet {
         }
 
         session.removeAttribute("cartService");
-        req.getRequestDispatcher("/WEB-INF/view/order.jsp").forward(req, resp);
+//        req.getRequestDispatcher("/WEB-INF/view/order.jsp").forward(req, resp);
+        resp.sendRedirect("/successsubmit");
     }
 }
 

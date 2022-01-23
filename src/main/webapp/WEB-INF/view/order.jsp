@@ -81,23 +81,6 @@
                 </tr>
             </table>
             </form>
-
-<%--            <form method="post">--%>
-<%--                <label>Имя</label><br>--%>
-<%--                <input type="text" name="name"><br><br>--%>
-<%--                <label>Телефон</label><br>--%>
-<%--                <input type="text" name="phone"><br><br>--%>
-<%--                <label>Электронная почта</label><br>--%>
-<%--                <input type="text" name="email"><br><br>--%>
-<%--                <label>Комментарий к заказу</label><br>--%>
-<%--                <textarea style="width: 300px" name="comment"></textarea><br><br>--%>
-<%--                <input type="submit" value="Оформить заказ">--%>
-<%--            </form>--%>
-<%--            <form method="post">--%>
-<%--                <input type="hidden" name="createdAt" value="">--%>
-<%--                <input type="text" name="customerId" VALUE="33">--%>
-<%--                <input type="submit" value="ORDER">--%>
-<%--            </form>--%>
         </td>
     </tr>
 </table>

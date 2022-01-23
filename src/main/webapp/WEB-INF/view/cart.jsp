@@ -17,22 +17,10 @@
             <h1>Корзина</h1>
         </td>
     </tr>
-<%--    <tr>--%>
-<%--        <td>Шаблон</td>--%>
-<%--        <td>Изображение</td>--%>
-<%--        <td>Кол-во</td>--%>
-<%--        <td>Материал</td>--%>
-<%--        <td>Рзмеры</td>--%>
-<%--        <td>Стоимость</td>--%>
-<%--        <td>-</td>--%>
-<%--    </tr>--%>
     <c:set var="totalcart" value="${0}" />
 <c:forEach var="listCatr" items="${listCatr}" varStatus="loop">
-<%--    <input type="hidden" name="idnumber" value="${listCatr.getId()}">--%>
-<%--    <input type="hidden" name="nameTemplate" value="${listCatr.getName()}">--%>
     <c:set var="totalcart" value="${totalcart + (listCatr.getTotalNDC() * listCatr.getNumber())}" />
     <tr>
-<%--        <td width="205px"><img src="/img/showcase/${listCatr.getImg()}.png" alt=""></td>--%>
         <td width="150px">
             <c:if test="${listCatr.getTypematerial() == 1}">
                 <p><img src="/img/cart/copper/${listCatr.getImg()}.png"></p>
