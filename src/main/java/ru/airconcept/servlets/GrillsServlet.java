@@ -87,7 +87,6 @@ public class GrillsServlet extends HttpServlet {
             req.setAttribute ("count", count.size ());
         }
 
-        //////////////////////
         // Проверякм дубликаты в корзине
         if(cartService != null){
             List<ModelCart> rowProduct = cartService.list();
@@ -107,17 +106,11 @@ public class GrillsServlet extends HttpServlet {
 
                 String Str1 = new String(sb);
                 String Str2 = new String(queryStirngCart);
-                System.out.println ("Trim "  + Str1.trim().equals (Str2.trim ()));
-
                 if(Str1.trim().equals (Str2.trim ())){
                     isStr = true;
-                }else {
-                    isStr = false;
                 }
-
             }
             req.setAttribute ("isStr", isStr);
-            req.setAttribute ("rowProduct", rowProduct);
         }
 
 

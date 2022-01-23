@@ -85,67 +85,36 @@
                 </div>
 
                 <div>
+                    <br>
                     <input type="submit" value="Расчет "/>
                 </div>
 
             </form>
         </td>
         <td valign="top">
-            <h2>${count}</h2>
-            <c:if test="${totalNdc != null}">
-                <div>
-                    <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">
-                        <input type="submit" value="В корзину">
-                    </form>
-                </div>
-            </c:if>
-
-            <strong>${isStr}</strong>
-            <c:forEach var="rowProduct" items="${rowProduct}">
-                <strong>${isStr}</strong>
-                <c:if test="${isStr}">
-                    1
-                </c:if>
-
-                <c:choose>
-                    <c:when test="${isStr}">
-                        1
-                    </c:when>
-                    <c:otherwise>
-                        0
-                    </c:otherwise>
-                </c:choose>
-
-
-
-            </c:forEach>
-
-
-<%--            <c:if test="${10 == 10}">--%>
-<%--                <p>${queryStirngCart}</p>--%>
-<%--                <p>${cartStringGoods}</p>--%>
+<%--            <c:if test="${totalNdc != null}">--%>
+<%--                <div>--%>
+<%--                    <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">--%>
+<%--                        <input type="submit" value="В корзину">--%>
+<%--                    </form>--%>
+<%--                </div>--%>
 <%--            </c:if>--%>
 
-<%--            <c:set var="q" value="${queryStirngCart}" />--%>
-<%--            <c:set var="qGoods" value="template=cell&materialid=1&size=2&width=500&height=500" />--%>
+            <c:choose>
+                <c:when test="${isStr}">
+                    <h3>Этот товар добавлен в корзину</h3>
+                </c:when>
+                <c:when test="${totalNdc != null}">
+                    <div>
+                        <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">
+                            <input type="submit" value="В корзину">
+                        </form>
+                    </div>
+                </c:when>
+                <c:otherwise>
 
-
-
-<%--            <c:choose>--%>
-<%--                <c:when test="${q == 100}">--%>
-<%--                    строка запросв: ${queryStirngCart}<br>--%>
-<%--                    строка в корзине: ${cartStringGoods}--%>
-<%--                    <br />--%>
-<%--                </c:when>--%>
-<%--                <c:when test="${q == qGoods}">--%>
-<%--                    string--%>
-<%--                    <br />--%>
-<%--                </c:when>--%>
-<%--                <c:otherwise>--%>
-<%--                    pizzas.--%>
-<%--                    <br />--%>
-<%--                </c:otherwise>--%>
-<%--            </c:choose>--%>
+                </c:otherwise>
+            </c:choose>
 
             <h2 class="war">Вычисляем</h2>
 
