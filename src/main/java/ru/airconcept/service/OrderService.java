@@ -14,7 +14,7 @@ import java.util.List;
 public class OrderService {
 
 
-    public static final String INSERT_CUSTOMER_ID = "INSERT INTO test_airconcept.customers(name, phone, email, comment) VALUES (?,?,?,?);";
+    public static final String INSERT_CUSTOMER_ID = "INSERT INTO test_airconcept.customers(name, phone, email, comment, createdAt, is_privacy) VALUES (?,?,?,?,NOW(),?);";
     public static final String INSERT_ORDER_ID = "INSERT INTO orders (customerId, nametemplate, namematerial, typematerial, number, size, width, height, totalNDC, img, createdAt) VALUES (?,?,?,?,?,?,?,?,?,?, NOW());";
     public static final String LAST_ID = "SET @last_id_in_customers = LAST_INSERT_ID();";
     public static final String MAX_ID = "SELECT MAX(id) FROM test_airconcept.customers";
@@ -34,7 +34,7 @@ public class OrderService {
     }
 
     // Сохраняем клиента в базу
-    public int saveCustomer(String name, String phone, String email, String comment){
+    public int saveCustomer(String name, String phone, String email, String comment, int is_privacy){
         int lastInsertId = 0;
         try (Connection connection = connectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(INSERT_CUSTOMER_ID,Statement.RETURN_GENERATED_KEYS)){
@@ -42,6 +42,7 @@ public class OrderService {
              statement.setString (2, phone);
              statement.setString (3, email);
              statement.setString (4, comment);
+             statement.setInt (5, is_privacy);
              statement.executeUpdate();
 //             int affectedRows = statement.executeUpdate();
 

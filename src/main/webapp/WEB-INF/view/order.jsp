@@ -57,21 +57,26 @@
                 <tr>
                     <td>
                         <label>Имя</label><br>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </td>
                     <td>
                         <label>Телефон</label><br>
-                        <input type="text" name="phone">
+                        <input type="text" name="phone" required>
                     </td>
                     <td>
                         <label>Электронная почта</label><br>
-                        <input type="text" name="email">
+                        <input type="email" name="email" required>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <label>Комментарий к заказу</label><br>
                         <textarea style="width: 300px" name="comment"></textarea><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="checkbox" name="is_privacy" value="1" required> <label>Даю согласие на обработку моих <a href="${pageContext.request.contextPath}/privacy">персональных данных</a></label>
                     </td>
                 </tr>
                 <tr>

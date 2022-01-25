@@ -1,11 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Вентиляционная решетка ${template}</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css">
 </head>
+
 <body>
 
 <table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
@@ -73,14 +77,14 @@
                 <div>
                     <fieldset>
                         <legend>Длина</legend>
-                        <input type="text" value="${width}" name="width" id="width"/>
+                        <input type="text" value="${width}" name="width" id="width" required/>
                     </fieldset>
                 </div>
 
                 <div>
                     <fieldset>
                         <legend>Высота</legend>
-                        <input type="text"  value="${height}" name="height" id="height"/>
+                        <input type="text"  value="${height}" name="height" id="height" required/>
                     </fieldset>
                 </div>
 

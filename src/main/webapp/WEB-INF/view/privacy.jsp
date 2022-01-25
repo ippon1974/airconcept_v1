@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Privacy</title>
+    <title>Защита личных данных</title>
 </head>
 <body>
-
+<h1>Защита личных данных</h1>
 </body>
 </html>

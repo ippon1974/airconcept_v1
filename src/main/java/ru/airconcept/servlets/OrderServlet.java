@@ -72,8 +72,15 @@ public class OrderServlet extends HttpServlet {
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
         String comment = req.getParameter("comment");
+        String is_privacy = req.getParameter ("is_privacy");
+        int is_privacyID = 0;
+        if(is_privacy != null) {
+            is_privacyID = Integer.parseInt(is_privacy);
+        }
 
-        int lastInsertId = orderService.saveCustomer(name, phone, email, comment);
+
+
+        int lastInsertId = orderService.saveCustomer(name, phone, email, comment, is_privacyID);
         List<ModelOrder> orderList = orderService.list();
         for (int i = 0; i < orderList.size(); i++) {
             orderService.saveOrder(lastInsertId, orderList.get(i).getNametemplate(), orderList.get(i).getNamematerial(),
@@ -161,16 +168,16 @@ public class OrderServlet extends HttpServlet {
                     "    </style>");
 
             //Name customer
-            listBuilder.append("<p>").append (modelCustomerOrder.getName()).append ("</p>");
+            listBuilder.append("<p>").append ("Ваше имя: ").append(modelCustomerOrder.getName()).append ("</p>");
 
             //Phone customer
-            listBuilder.append("<p>").append (modelCustomerOrder.getPhone()).append ("</p>");
+            listBuilder.append("<p>").append("Ваш телефон: ").append (modelCustomerOrder.getPhone()).append ("</p>");
 
             //Email customer
-            listBuilder.append("<p>").append (modelCustomerOrder.getEmail()).append ("</p>");
+            listBuilder.append("<p>").append ("Ваша электропочта: ").append (modelCustomerOrder.getEmail()).append ("</p>");
 
             //Comment customer
-            listBuilder.append("<p>").append (modelCustomerOrder.getComment ()).append ("</p>");
+            listBuilder.append("<p>").append ("Ваш комментарий к заказу: ").append (modelCustomerOrder.getComment ()).append ("</p>");
 
             //All Cosst Grill of Cart
             BigDecimal allTotalCostsNDC = new BigDecimal (0);
