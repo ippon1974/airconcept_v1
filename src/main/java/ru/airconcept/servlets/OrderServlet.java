@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -78,8 +79,6 @@ public class OrderServlet extends HttpServlet {
             is_privacyID = Integer.parseInt(is_privacy);
         }
 
-
-
         int lastInsertId = orderService.saveCustomer(name, phone, email, comment, is_privacyID);
         List<ModelOrder> orderList = orderService.list();
         for (int i = 0; i < orderList.size(); i++) {
@@ -93,11 +92,8 @@ public class OrderServlet extends HttpServlet {
         List<ModelCustomerOrder> mList = customerOrderService.getAll();
 
         ModelCustomerOrder modelCustomerOrder = customerOrderService.getByCustomerOrder(lastInsertId);
-//        ModelCustomerOrder test;
-        System.out.println("/////////////////////////////////////////////////////////");
-        System.out.println(modelCustomerOrder.getName());
+
         for (int i = 0; i < mList.size(); i++) {
-//            test = customerOrderService.getByCustomerOrder(lastInsertId);
             if(modelCustomerOrder.getCustomerId() == mList.get(i).getCustomerId()){
                 System.out.println(mList.get(i).getNameTemplate() + " " + " " + mList.get(i).getNameMaterial() + " " + mList.get(i).getTotalNDC());
             }
@@ -126,7 +122,7 @@ public class OrderServlet extends HttpServlet {
         Session sessionMail = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "");
+                return new PasswordAuthentication("post2074@gmail.com", "k4b8c321974");
             }
 
         });
@@ -212,17 +208,43 @@ public class OrderServlet extends HttpServlet {
 //            madmin.send();
 
             System.out.println("sending...");
-            // Send message
 
+            // Send message
             Transport.send(message);
+
             System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
 
-        session.removeAttribute("cartService");
-//        req.getRequestDispatcher("/WEB-INF/view/order.jsp").forward(req, resp);
-        resp.sendRedirect("/successsubmit");
+        List<String> errors = new ArrayList<String>();
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("UTF-8");
+        PrintWriter pw = resp.getWriter();
+
+        if (name.equals("") || null == name) {
+            errors.add("Поле <strong>Имя</strong> не может быть пустым.");
+        }
+        if (phone.equals("") || null == phone) {
+            errors.add("Поле <strong>Телефон</strong> не может быть пустым.");
+        }
+        if (email.equals("") || null == email) {
+            errors.add("Поле <strong>Email</strong> не может быть пустым.");
+        }
+
+        if (!errors.isEmpty()) {
+            String errorList = "<ul>";
+            for (String error : errors) {
+                errorList += "<li>" + error + "</li>";
+            }
+            errorList += "</ul>";
+            errorList += "<p><a href=/order><< Вернутся к заказу</a><p>";
+            pw.println(errorList);
+        } else {
+            session.removeAttribute("cartService");
+            resp.sendRedirect("/successsubmit");
+        }
+
     }
 }
 

@@ -13,8 +13,8 @@
 <table align="center" border="0" cellpadding="2" cellspacing="2" width="70%">
     <tr>
         <td colspan="6">
-            <h1>Оформление заказа</h1>
-            <h2>Заказ № 1402351</h2>
+            <h1><a href="/cart">Корзина</a> → Оформление заказа</h1>
+<%--            <h2>Заказ № 1402351</h2>--%>
         </td>
     </tr>
 
@@ -33,7 +33,8 @@
                 <p><img src="/img/cart/steel/${orderList.getImg()}.png"></p>
             </c:if>
         </td>
-            <td><p>Вентиляционная решетка ${orderList.getNametemplate()}</p></td>
+<%--            <td><p>Вентиляционная решетка ${orderList.getNametemplate()}</p></td>--%>
+            <td><a href="${pageContext.request.contextPath}/catalog/grills?template=${orderList.getImg()}&materialid=${orderList.getTypematerial()}&size=${orderList.getSize()}&width=${orderList.getWidth()}&height=${orderList.getHeight()}">Вентиляционная решетка ${orderList.getNametemplate()}</a></td>
             <td><p>${orderList.getNamematerial()}</p></td>
             <td>${orderList.getWidth()} мм &#215; ${orderList.getHeight()} мм &#215; ${orderList.getSize()} мм</td>
             <td><p>${orderList.getTotalNDC() * orderList.getNumber()} руб.</p></td>
@@ -51,21 +52,20 @@
 
     <tr>
         <td colspan="7">
-
             <form method="post">
             <table border="0" cellpadding="2" cellspacing="2" width="70%">
                 <tr>
                     <td>
                         <label>Имя</label><br>
-                        <input type="text" name="name" required>
+                        <input type="text" name="name" required="required">
                     </td>
                     <td>
                         <label>Телефон</label><br>
-                        <input type="text" name="phone" required>
+                        <input type="text" name="phone" required="required">
                     </td>
                     <td>
                         <label>Электронная почта</label><br>
-                        <input type="email" name="email" required>
+                        <input type="email" name="email" required="required">
                     </td>
                 </tr>
                 <tr>
@@ -76,7 +76,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <input type="checkbox" name="is_privacy" value="1" required> <label>Даю согласие на обработку моих <a href="${pageContext.request.contextPath}/privacy">персональных данных</a></label>
+                        <input type="checkbox" name="is_privacy" value="1" required="required"> <label>Даю согласие на обработку моих <a target="_blank" href="${pageContext.request.contextPath}/privacy">персональных данных</a></label>
                     </td>
                 </tr>
                 <tr>

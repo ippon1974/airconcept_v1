@@ -36,7 +36,7 @@
         <td>${listCatr.getNamematerial()}</td>
         <td>${listCatr.getWidth()} мм &#215; ${listCatr.getHeight()} мм &#215; ${listCatr.getSize()} мм</td>
         <td>${listCatr.getTotalNDC() * listCatr.getNumber()} руб.</td>
-        <td width=""><input type="text" name="number" size="2em" value="${listCatr.getNumber()}"></td>
+        <td width=""><input type="number" min="1" name="number" size="2em" value="${listCatr.getNumber()}"></td>
         <td><a href="/delete?id=${listCatr.getId()}">Удалить</a></td>
     </tr>
 </c:forEach>

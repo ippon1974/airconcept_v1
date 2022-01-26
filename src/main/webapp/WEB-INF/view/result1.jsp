@@ -77,14 +77,14 @@
                 <div>
                     <fieldset>
                         <legend>Длина</legend>
-                        <input type="text" value="${width}" name="width" id="width" required/>
+                        <input type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
                     </fieldset>
                 </div>
 
                 <div>
                     <fieldset>
                         <legend>Высота</legend>
-                        <input type="text"  value="${height}" name="height" id="height" required/>
+                        <input type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
                     </fieldset>
                 </div>
 
