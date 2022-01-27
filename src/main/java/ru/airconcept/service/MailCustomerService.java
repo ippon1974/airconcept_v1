@@ -1,38 +1,58 @@
 package ru.airconcept.service;
 
+
+import ru.airconcept.dao.ConnectionFactory;
+import ru.airconcept.model.ModelCustomerOrder;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.ArrayList;
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Properties;
 
 public class MailCustomerService {
+    private String to;
+    private String from;
+    private String host;
+    private String port;
+    private Properties properties;
+    private Session session;
+    private ModelCustomerOrder modelCustomerOrder;
+    private CustomerOrderService customerOrderService;
+    private int lastInsertId;
 
-    public void sendMailToCustomer(String email){
-        // Recipient's email ID needs to be mentioned.
-        String to = email;
+    public MailCustomerService(String to, String from, String host, String port, int lastInsertId) {
+        this.to = to;
+        this.from = from;
+        this.host = host;
+        this.port = port;
+        this.lastInsertId = lastInsertId;
 
-        // Sender's email ID needs to be mentioned
-        String from = "post2074@gmail.com";
+    }
 
-        // Assuming you are sending email from through gmails smtp
-        String host = "smtp.gmail.com";
 
-        // Get system properties
-        Properties properties = System.getProperties();
-
-        // Setup mail server
+    private void getPropertiesServer(){
+        properties = System.getProperties();
         properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", "465");
+        properties.put("mail.smtp.port", port);
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put ("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.auth", "true");
+    }
+
+    public void sendMail(){
+        customerOrderService = new CustomerOrderService(ConnectionFactory.getInstance());
+        List<ModelCustomerOrder> mList = customerOrderService.getAll();
+        modelCustomerOrder = customerOrderService.getByCustomerOrder(lastInsertId);
+
+        getPropertiesServer();
 
         // Get the Session object.// and pass username and password
-        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+        session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "k4b8c321974");
+                return new PasswordAuthentication("post2074@gmail.com", "");
             }
 
         });
@@ -45,44 +65,188 @@ public class MailCustomerService {
             MimeMessage message = new MimeMessage(session);
 
             // Set From: header field of the header.
-            message.setFrom(new InternetAddress (from));
+            message.setFrom(new InternetAddress(from));
 
             // Set To: header field of the header.
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: header field
-            message.setSubject("This is the Subject Line!");
-
-            // Now set the actual message
-//            message.setText("This is actual message");
-
-            ArrayList<String> list = new ArrayList<String>();
-            list.add ("one");
-            list.add ("two");
-            list.add ("three");
-            list.add ("four");
-            list.add ("five");
-            list.add ("six");
+            message.setSubject("Производство вентиляционных решеток");
             StringBuilder listBuilder = new StringBuilder();
-            for (int i = 0; i < list.size (); i++) {
-                listBuilder.append("<H1>").append(list.get(i)).append("</H1>");
-            }
-            listBuilder.append ("----------------------------------------------");
+            listBuilder.append ("<style>\n" +
+                    "        h1.one{\n" +
+                    "            font-weight: normal;\n" +
+                    "        }\n" +
+                    "        table.inside tr td {\n" +
+                    "            font-family: \"\";\n" +
+                    "            font-size: 0.7em;\n" +
+                    "        }\n" +
+                    "        p{\n" +
+                    "            font-size: 0.7em;\n" +
+                    "        }\n" +
+                    "        p.total{\n" +
+                    "            font-size: 0.9em;\n" +
+                    "        }\n" +
+                    "    </style>");
 
-            String namecompany = "Civek Water Jet";
-            StringBuilder htmlBuilder = new StringBuilder();
-            String textH = "Производство вентиляционных решеток";
-            htmlBuilder.append("<H1>").append("Компания ").append(namecompany).append("</H1>");
-            htmlBuilder.append("<H2>").append(textH).append("</H2>");
+            //Name customer
+            listBuilder.append("<p>").append ("Ваше имя: ").append(modelCustomerOrder.getName()).append ("</p>");
+
+            //Phone customer
+            listBuilder.append("<p>").append("Ваш телефон: ").append (modelCustomerOrder.getPhone()).append ("</p>");
+
+            //Email customer
+            listBuilder.append("<p>").append ("Ваша электропочта: ").append (modelCustomerOrder.getEmail()).append ("</p>");
+
+            //Comment customer
+            listBuilder.append("<p>").append ("Ваш комментарий к заказу: ").append (modelCustomerOrder.getComment ()).append ("</p>");
+
+            //All Cosst Grill of Cart
+            BigDecimal allTotalCostsNDC = new BigDecimal (0);
+
+            listBuilder.append ("<table class=inside border=0 width=100%>");
+            for (int i = 0; i < mList.size(); i++) {
+                if(modelCustomerOrder.getCustomerId() == mList.get(i).getCustomerId()) {
+                    BigDecimal costCount = mList.get(i).getTotalNDC().multiply (new BigDecimal (mList.get (i).getNumber()));
+                    allTotalCostsNDC = allTotalCostsNDC.add (costCount);
+                    listBuilder.append ("<tr>");
+                    if(mList.get(i).getNameMaterial().equals ("Латунь")){
+                        listBuilder.append("<td>").append("<img src=").append("http://23.105.246.179:8080/").append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    if(mList.get(i).getNameMaterial().equals ("Медь")){
+                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    if(mList.get(i).getNameMaterial().equals ("Сталь")){
+                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    listBuilder.append ("<td>").append ("Вентиляционная решетка ").append(mList.get(i).getNameTemplate()).append ("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getNameMaterial()).append ("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм ").append (mList.get (i).getHeight ()).append ("мм ") .append (mList.get (i).getSize()).append ("мм ") .append("</td>");
+                    listBuilder.append ("<td>").append(costCount).append (" руб.").append ("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getNumber()).append (" шт.").append ("</td>");
+                    listBuilder.append ("</tr>");
+                }
+            }
+            listBuilder.append ("</table>");
+            listBuilder.append ("<hr style=border-top: 1px solid black;>");
+            listBuilder.append ("<p class = total>").append ("Общая стоимость: ").append(allTotalCostsNDC).append (" руб.").append ("</p>");
+
             message.setContent(listBuilder.toString(), "text/html; charset=UTF-8");
 
-            System.out.println("sending...");
-            // Send message
+//            MailAdminService madmin = new MailAdminService();
+//            madmin.send();
 
+            System.out.println("sending...");
+
+            // Send message
             Transport.send(message);
+
             System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
+
     }
+
+    public void sendAdminMain(){
+        customerOrderService = new CustomerOrderService(ConnectionFactory.getInstance());
+        List<ModelCustomerOrder> mList = customerOrderService.getAll();
+        modelCustomerOrder = customerOrderService.getByCustomerOrder(lastInsertId);
+        getPropertiesServer();
+
+        // Get the Session object.// and pass username and password
+        session = Session.getInstance(properties, new javax.mail.Authenticator() {
+
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("post2074@gmail.com", "");
+            }
+
+        });
+
+        // Used to debug SMTP issues
+        session.setDebug(true);
+
+        try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(from));
+
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress("box@wcut.ru"));
+
+            // Set Subject: header field
+            message.setSubject("Запрос с сайта: Aicroncept");
+            StringBuilder listBuilder = new StringBuilder();
+            listBuilder.append ("<style>\n" +
+                    "        h1.one{\n" +
+                    "            font-weight: normal;\n" +
+                    "        }\n" +
+                    "        table.inside tr td {\n" +
+                    "            font-family: \"\";\n" +
+                    "            font-size: 0.7em;\n" +
+                    "        }\n" +
+                    "        p{\n" +
+                    "            font-size: 0.7em;\n" +
+                    "        }\n" +
+                    "        p.total{\n" +
+                    "            font-size: 0.9em;\n" +
+                    "        }\n" +
+                    "    </style>");
+
+            //Name customer
+            listBuilder.append("<p>").append ("Имя клиента: ").append(modelCustomerOrder.getName()).append ("</p>");
+
+            //Phone customer
+            listBuilder.append("<p>").append("Телефон клиента: ").append (modelCustomerOrder.getPhone()).append ("</p>");
+
+            //Email customer
+            listBuilder.append("<p>").append ("Почта клиента: ").append (modelCustomerOrder.getEmail()).append ("</p>");
+
+            //Comment customer
+            listBuilder.append("<p>").append ("Комментарий клиента: ").append (modelCustomerOrder.getComment ()).append ("</p>");
+
+            //All Cosst Grill of Cart
+            BigDecimal allTotalCostsNDC = new BigDecimal (0);
+
+            listBuilder.append ("<table class=inside border=0 width=100%>");
+            for (int i = 0; i < mList.size(); i++) {
+                if(modelCustomerOrder.getCustomerId() == mList.get(i).getCustomerId()) {
+                    BigDecimal costCount = mList.get(i).getTotalNDC().multiply (new BigDecimal (mList.get (i).getNumber()));
+                    allTotalCostsNDC = allTotalCostsNDC.add (costCount);
+                    listBuilder.append ("<tr>");
+                    if(mList.get(i).getNameMaterial().equals ("Латунь")){
+                        listBuilder.append("<td>").append("<img src=").append("http://23.105.246.179:8080/").append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    if(mList.get(i).getNameMaterial().equals ("Медь")){
+                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    if(mList.get(i).getNameMaterial().equals ("Сталь")){
+                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                    listBuilder.append ("<td>").append ("Вентиляционная решетка ").append(mList.get(i).getNameTemplate()).append ("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getNameMaterial()).append ("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм ").append (mList.get (i).getHeight ()).append ("мм ") .append (mList.get (i).getSize()).append ("мм ") .append("</td>");
+                    listBuilder.append ("<td>").append(costCount).append (" руб.").append ("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getNumber()).append (" шт.").append ("</td>");
+                    listBuilder.append ("</tr>");
+                }
+            }
+            listBuilder.append ("</table>");
+            listBuilder.append ("<hr style=border-top: 1px solid black;>");
+            listBuilder.append ("<p class = total>").append ("Общая стоимость: ").append(allTotalCostsNDC).append (" руб.").append ("</p>");
+
+            message.setContent(listBuilder.toString(), "text/html; charset=UTF-8");
+
+//            MailAdminService madmin = new MailAdminService();
+//            madmin.send();
+
+            System.out.println("sending...");
+
+            // Send message
+            Transport.send(message);
+
+            System.out.println("Sent message successfully....");
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        }
+
+
+    }
+
 }

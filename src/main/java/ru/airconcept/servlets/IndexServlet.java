@@ -49,7 +49,7 @@ public class IndexServlet extends HttpServlet {
         req.setAttribute("n", n);
 
         session.setAttribute("osel", session.getId());
-        System.out.println("my session" + " " + session.getAttribute("osel"));
+//        System.out.println("my session" + " " + session.getAttribute("osel"));
 
         RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/img/101.jsp");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/view/index.jsp");
