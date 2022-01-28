@@ -174,7 +174,7 @@ public class MailCustomerService {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress("box@wcut.ru"));
 
             // Set Subject: header field
-            message.setSubject("Запрос с сайта: Aicroncept");
+            message.setSubject("Запрос с сайта: Airconcept.ru");
             StringBuilder listBuilder = new StringBuilder();
             listBuilder.append ("<style>\n" +
                     "        h1.one{\n" +
