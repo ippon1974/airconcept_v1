@@ -5,16 +5,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello ${name}</title>
+    <title>Вентиляционные решетки из латуни меди стали</title>
 </head>
 
 <body>
-<h1>Hello ${name}</h1>
+<h1>Вентиляционные решетки из латуни меди стали</h1>
 <p>${message}</p>
 <p>Session: ${osel}</p>
 <hr>
-<p><a href="/news">News</a></p>
-<p><a href="/catalog">Catalog</a></p>
+<p><a href="/catalog">Каталог</a></p>
+<p><a href="/news">Новости</a></p>
 <p><a href="/test">Test page</a></p>
 <p><a href="/add_cookies">Add cookies</a></p>
 <p><a href="/read_cookies">Read cookies</a></p>

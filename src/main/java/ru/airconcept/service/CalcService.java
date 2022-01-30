@@ -75,14 +75,12 @@ public class CalcService {
         return costMatNotCut;
     }
 
-    //Метод вычисляет стоимость раскроя без материала
+    // Метод вычисляет стоимость раскроя без материала
     public BigDecimal getCostCutNotMat(BigDecimal costformeter, int cutmeter){
         BigDecimal meter = new BigDecimal(cutmeter);
         BigDecimal cost = costformeter.multiply(meter).setScale(0, RoundingMode.DOWN);
         return  cost;
     }
-
-
 
 
 }

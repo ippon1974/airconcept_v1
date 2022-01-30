@@ -113,7 +113,6 @@ public class GrillsServlet extends HttpServlet {
             req.setAttribute ("isStr", isStr);
         }
 
-
         grillService = new GrillService(ConnectionFactory.getInstance());
         List<ModelGrill> listGrills = grillService.getAll();
         req.setAttribute ("listGrills", listGrills);
@@ -158,7 +157,6 @@ public class GrillsServlet extends HttpServlet {
         }
         req.setAttribute ("height", height);
 
-
         List<ModelMaterial> modelMaterial = grillService.getListMaterial();
         req.setAttribute ("modelMaterial", modelMaterial);
 
@@ -176,7 +174,6 @@ public class GrillsServlet extends HttpServlet {
         if(material != null || size !=null) {
             modelCalc = calcService.getCostMatStore (materialID, sizeID);
             req.setAttribute ("modelCalc", modelCalc);
-//            System.out.println (modelCalc.getCostmcut() + " " + modelCalc.getMname () + " " + modelCalc.getCost() + " " + modelCalc.getSize());
         }
 
         taxService = new TaxService(ConnectionFactory.getInstance());
@@ -245,7 +242,7 @@ public class GrillsServlet extends HttpServlet {
                     .append (heightID);
             req.setAttribute ("cartStringGoods", cartStringGoods);
         }
-        req.getRequestDispatcher ("/WEB-INF/view/result1.jsp").forward (req, resp);
+        req.getRequestDispatcher ("/WEB-INF/view/product.jsp").forward (req, resp);
 //        resp.sendRedirect("/successsubmit");
     }
 }
