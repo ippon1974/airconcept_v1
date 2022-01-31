@@ -39,7 +39,7 @@
         </select>
         <input type="number" min="120" max="3000" value="" name="width" id="width" required/>
         <input type="number" min="60" max="1500" value="" name="height" id="height" required/>
-        <input type="submit">
+        <input type="submit" value="GO" />
     </form>
 </div>
 
@@ -50,7 +50,7 @@
         <div class="about">
             <figure>
                 <a href="/catalog/grills?template=${listGrills.gtransliterations}">
-                    <img src="/img/showcase/${listGrills.gtransliterations}.png"></a>
+                    <img src="/img/showcase/blank/${listGrills.gtransliterations}.png"></a>
                 <figcaption><a href="/catalog/grills?template=${listGrills.gtransliterations}">${listGrills.gname}</a><br></figcaption>
             </figure>
         </div>

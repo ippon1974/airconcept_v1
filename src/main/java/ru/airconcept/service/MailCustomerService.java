@@ -31,7 +31,6 @@ public class MailCustomerService {
 
     }
 
-
     private void getPropertiesServer(){
         properties = System.getProperties();
         properties.put("mail.smtp.host", host);

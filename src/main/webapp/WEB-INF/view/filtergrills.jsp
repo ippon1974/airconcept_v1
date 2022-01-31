@@ -20,11 +20,24 @@
     <div style="clear: left"></div>
 </div>
 
-<div style="margin-left: 40px"><h1><a href="${pageContext.request.contextPath}/catalog/grills">Вентиляционные решетки</a></h1></div>
+
+<c:set var="materialname" value="" />
+<c:if test="${material == 1}">
+    <c:set var="materialname" value="Материал: Латунь" />
+</c:if>
+<c:if test="${material == 2}">
+    <c:set var="materialname" value="Материал: Медь" />
+</c:if>
+<c:if test="${material == 3}">
+    <c:set var="materialname" value="Материал: Сталь" />
+</c:if>
+
+<div style="margin-left: 40px">
+    <h1><a href="${pageContext.request.contextPath}/catalog/grills">Вентиляционные решетки</a> → ${materialname}. Толщина листа: ${size} мм.</h1>
+</div>
 
 
-<div style="margin-left: 40px; width: 600px;">
-
+<div style="margin-left: 40px; width: 800px;">
     <form action="/filtergrills">
 
         <select class="custom-select" id="materialid" name="materialid">
@@ -52,7 +65,7 @@
 
         <input type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
         <input type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
-        <input type="submit" value="GO">
+        <input type="submit" value="GO" name="GO" />
     </form>
 </div>
 
@@ -62,17 +75,17 @@
         <figure>
             <a href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">
                 <c:if test="${listFilterCalcs.materialid == 1}">
-                    <p><img src="/img/cart/copper/${listFilterCalcs.gpathimg}.png"></p>
+                    <img src="/img/showcase/copper/${listFilterCalcs.gpathimg}.png">
                 </c:if>
                 <c:if test="${listFilterCalcs.materialid == 2}">
-                    <p><img src="/img/cart/brass/${listFilterCalcs.gpathimg}.png"></p>
+                    <img src="/img/showcase/brass/${listFilterCalcs.gpathimg}.png">
                 </c:if>
                 <c:if test="${listFilterCalcs.materialid == 3}">
-                    <p><img src="/img/cart/steel/${listFilterCalcs.gpathimg}.png"></p>
+                    <img src="/img/showcase/steel/${listFilterCalcs.gpathimg}.png">
                 </c:if>
             </a>
             <figcaption>
-
+                Шаблон: <a href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">${listFilterCalcs.gname}</a><br>
                 <c:if test="${listFilterCalcs.materialid == 1}">
                     Латунь ${listFilterCalcs.size} мм.<br>
                 </c:if>
@@ -82,10 +95,9 @@
                 <c:if test="${listFilterCalcs.materialid == 3}">
                     Сталь ${listFilterCalcs.size} мм.<br>
                 </c:if>
-
                 Размер: ${listFilterCalcs.gw} мм &#215; ${listFilterCalcs.gh} мм &#215; ${listFilterCalcs.size} мм<br>
-                Стоимость: ${listFilterCalcs.totalNdc} руб.<br>
-                <a href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">${listFilterCalcs.gname}</a></figcaption>
+                Стоимость: ${listFilterCalcs.totalNdc} руб.
+                </figcaption>
         </figure>
     </div>
 </c:forEach>
