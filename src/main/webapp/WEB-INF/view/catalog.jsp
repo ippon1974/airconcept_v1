@@ -7,5 +7,6 @@
 <p><a href="/">Home</a></p>
 <h1>Каталог</h1>
 <h2><a href="${pageContext.request.contextPath}/catalog/grills">Вентиляционные решетки</a></h2>
+<jsp:include page="/WEB-INF/view/footer.jsp" />
 </body>
 </html>

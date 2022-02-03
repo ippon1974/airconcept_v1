@@ -47,6 +47,6 @@
 <%--<c:forEach var="template" items="${listGrills}">--%>
 <%--    <a href="${pageContext.request.contextPath}/catalog/grills/${template.gtransliterations}">${template.gname}</a><br>--%>
 <%--</c:forEach>--%>
-
+<jsp:include page="/WEB-INF/view/footer.jsp" />
 </body>
 </html>
