@@ -16,7 +16,7 @@
     <tr>
         <td valign="top" colspan="3">
             <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны вентиляционных решеток</a></p>
-            <h1>Вентиляционная решетка ${template}</h1>
+            <h1>Вентиляционная решетка &laquo;${template}&raquo;</h1>
 
             <c:if test="${cartService != null}">
                 <div align="right"><a href="/cart">Корзина ${count}</a></div>
