@@ -15,13 +15,11 @@
 <table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
     <tr>
         <td valign="top" colspan="3">
-            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны вентиляционных решеток</a></p>
+            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны вентиляционных решеток</a> / <a href="/adaptive">Adaptive</a></p>
             <h1>Вентиляционная решетка &laquo;${template}&raquo;</h1>
-
             <c:if test="${cartService != null}">
                 <div align="right"><a href="/cart">Корзина ${count}</a></div>
             </c:if>
-
         </td>
     </tr>
     <tr valign="top">
