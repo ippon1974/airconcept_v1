@@ -9,11 +9,8 @@ public class ConnectionFactory {
 //    public static final String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
     public static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/test_airconcept?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     public static final String LOGIN = "airconcept";
-<<<<<<< HEAD
-    public static final String PASSWORD = "";
-=======
-    public static final String PASSWORD = "k@4b8C321974";
->>>>>>> 460d10627ceaaa2c58d1df2bed3f1102e33c6d2f
+
+    public static final String PASSWORD = "0000000";
 
     private static ConnectionFactory instance;
 

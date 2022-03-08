@@ -51,11 +51,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-<<<<<<< HEAD
-                return new PasswordAuthentication("post2074@gmail.com", "");
-=======
-                return new PasswordAuthentication("post2074@gmail.com", "k4b8c321974");
->>>>>>> 460d10627ceaaa2c58d1df2bed3f1102e33c6d2f
+                return new PasswordAuthentication("post2074@gmail.com", "0000000");
             }
 
         });
@@ -158,7 +154,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "k4b8c321974");
+                return new PasswordAuthentication("post2074@gmail.com", "0000000000");
             }
 
         });
