@@ -4,14 +4,14 @@
 
 <html>
 <head>
-    <title>Вентиляционные решетки</title>
+    <title>Шаблоны вентиляционных решеток</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 
 <div style="">
-    <div style="padding-left:40px;float: left; width: 100px"><a href="/catalog">Каталог</a></div>
+    <div style="padding-left:40px;float: left; width: 400px"><a href="/">Airconcept</a> | <a href="/contact">Контакты</a></div>
     <div style="float: left; width: 80%; text-align: right">
                 <c:if test="${cartService != null}">
                     <div align=""><a href="/cart">Корзина</a></div>
@@ -20,8 +20,7 @@
     <div style="clear: left"></div>
 </div>
 
-<div style="margin-left: 40px"><h1>Вентиляционные решетки</h1></div>
-
+<div style="margin-left: 40px"><h1>Шаблоны вентиляционных решеток</h1></div>
 
 <div style="margin-left: 40px; width: 600px;">
     <form action="/filtergrills">
