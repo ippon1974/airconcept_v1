@@ -22,7 +22,7 @@
 
 <div style="margin-left: 40px"><h1>Шаблоны вентиляционных решеток</h1></div>
 
-<div style="margin-left: 40px; width: 600px;">
+<div style="margin-left: 40px; width: 850px;">
     <form action="/filtergrills">
         <select class="custom-select" id="materialid" name="materialid">
             <option value="1">Латунь</option>

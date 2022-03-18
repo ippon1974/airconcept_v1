@@ -37,7 +37,7 @@
 </div>
 
 
-<div style="margin-left: 40px; width: 800px;">
+<div style="margin-left: 40px; width: 850px;">
     <form action="/filtergrills">
 
         <select class="custom-select" id="materialid" name="materialid">
@@ -65,7 +65,7 @@
 
         <input type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
         <input type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
-        <input type="submit" value="GO" name="GO" />
+        <input type="submit" value="GO" />
     </form>
 </div>
 
