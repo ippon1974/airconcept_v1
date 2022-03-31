@@ -73,6 +73,10 @@ public class MailCustomerService {
             message.setSubject("Производство вентиляционных решеток");
             StringBuilder listBuilder = new StringBuilder();
             listBuilder.append ("<style>\n" +
+                    "        div.attention{\n" +
+                    "            font-size: 1.0em;\n" +
+                    "            font-color: red;\n" +
+                    "        }\n" +
                     "        h1.one{\n" +
                     "            font-weight: normal;\n" +
                     "        }\n" +
@@ -86,7 +90,14 @@ public class MailCustomerService {
                     "        p.total{\n" +
                     "            font-size: 0.9em;\n" +
                     "        }\n" +
+                    "        div.footer{\n" +
+                    "            font-size: 0.8em;\n" +
+                    "        }\n" +
                     "    </style>");
+
+            //Attention message
+            listBuilder.append("<div class = attention>").append("Предварительный расчет !").append("</div>");
+            listBuilder.append ("<hr style=border-top: 1px solid black;>");
 
             //Name customer
             listBuilder.append("<p>").append ("Ваше имя: ").append(modelCustomerOrder.getName()).append ("</p>");
@@ -103,7 +114,7 @@ public class MailCustomerService {
             //All Cosst Grill of Cart
             BigDecimal allTotalCostsNDC = new BigDecimal (0);
 
-            listBuilder.append ("<table class=inside border=0 width=100%>");
+            listBuilder.append ("<table class=inside border=0 width=90%>");
             for (int i = 0; i < mList.size(); i++) {
                 if(modelCustomerOrder.getCustomerId() == mList.get(i).getCustomerId()) {
                     BigDecimal costCount = mList.get(i).getTotalNDC().multiply (new BigDecimal (mList.get (i).getNumber()));
@@ -117,7 +128,7 @@ public class MailCustomerService {
                         listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     listBuilder.append ("<td>").append ("Вентиляционная решетка ").append(mList.get(i).getNameTemplate()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getNameMaterial()).append ("</td>");
-                    listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм ").append (mList.get (i).getHeight ()).append ("мм ") .append (mList.get (i).getSize()).append ("мм ") .append("</td>");
+                    listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм &#215; ").append (mList.get (i).getHeight ()).append ("мм &#215; ") .append (mList.get (i).getSize()).append ("мм &#215;") .append("</td>");
                     listBuilder.append ("<td>").append(costCount).append (" руб.").append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getNumber()).append (" шт.").append ("</td>");
                     listBuilder.append ("</tr>");
@@ -126,7 +137,12 @@ public class MailCustomerService {
             listBuilder.append ("</table>");
             listBuilder.append ("<hr style=border-top: 1px solid black;>");
             listBuilder.append ("<p class = total>").append ("Общая стоимость: ").append(allTotalCostsNDC).append (" руб.").append ("</p>");
-
+            listBuilder.append("<div class = footer>«Airconcept» Производство декоративных ветниляциооных решеток")
+            .append(" 140080 ул. Карла Маркса д. 117, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»")
+            .append(" Контактный телефон: +7 (925) 585-33-71 (Мегафон) В рабочие время 9:00 до 19:00 Суббота и воскресенье выходные дни")
+            .append(" Электронная почта: box@wcut.ru")
+            .append(" Веб сайт: http://www.airconcept.ru/")
+            .append("</div>");
             message.setContent(listBuilder.toString(), "text/html; charset=UTF-8");
 
 //            MailAdminService madmin = new MailAdminService();
@@ -154,7 +170,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "0000000000");
+                return new PasswordAuthentication("post2074@gmail.com", "000000000");
             }
 
         });
@@ -206,7 +222,7 @@ public class MailCustomerService {
             //All Cosst Grill of Cart
             BigDecimal allTotalCostsNDC = new BigDecimal (0);
 
-            listBuilder.append ("<table class=inside border=0 width=100%>");
+            listBuilder.append ("<table class=inside border=0 width=90%>");
             for (int i = 0; i < mList.size(); i++) {
                 if(modelCustomerOrder.getCustomerId() == mList.get(i).getCustomerId()) {
                     BigDecimal costCount = mList.get(i).getTotalNDC().multiply (new BigDecimal (mList.get (i).getNumber()));
@@ -229,6 +245,7 @@ public class MailCustomerService {
             listBuilder.append ("</table>");
             listBuilder.append ("<hr style=border-top: 1px solid black;>");
             listBuilder.append ("<p class = total>").append ("Общая стоимость: ").append(allTotalCostsNDC).append (" руб.").append ("</p>");
+            listBuilder.append("<div style=border-bottom: 1px solid #f00;>").append("</div>");
 
             message.setContent(listBuilder.toString(), "text/html; charset=UTF-8");
 

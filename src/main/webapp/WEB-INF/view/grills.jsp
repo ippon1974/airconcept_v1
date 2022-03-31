@@ -10,8 +10,9 @@
 </head>
 <body>
 
+<jsp:include page="/WEB-INF/view/menu.jsp" />
+
 <div style="">
-    <div style="padding-left:40px;float: left; width: 400px"><a href="/">Airconcept</a> | <a href="/contact">Контакты</a></div>
     <div style="float: left; width: 80%; text-align: right">
                 <c:if test="${cartService != null}">
                     <div align=""><a href="/cart">Корзина</a></div>

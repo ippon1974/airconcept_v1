@@ -8,10 +8,9 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/view/menu.jsp" />
 
 <div style="">
-    <div style="padding-left:40px;float: left; width: 100px"><a href="/catalog">Каталог</a></div>
     <div style="float: left; width: 80%; text-align: right">
         <c:if test="${cartService != null}">
             <div align=""><a href="/cart">Корзина</a></div>
@@ -19,7 +18,6 @@
     </div>
     <div style="clear: left"></div>
 </div>
-
 
 <c:set var="materialname" value="" />
 <c:if test="${material == 1}">
