@@ -6,6 +6,7 @@
 <body>
 
 <h1>Ваш запрос успешно отправлен!</h1>
+<p><a href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a></p>
 
 </body>
 </html>
