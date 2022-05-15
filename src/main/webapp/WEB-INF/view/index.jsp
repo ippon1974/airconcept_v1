@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="4672193bab487671" />
     <title>Декоративные вентиляционные решетки из латуни меди стали</title>
 </head>
 

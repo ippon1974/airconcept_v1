@@ -5,7 +5,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Вентиляционная решетка ${template}</title>
+    <c:choose>
+        <c:when test="${width == null}">
+            <title>Вентиляционная решетка ${template}</title>
+        </c:when>
+
+        <c:when test="${width != null}">
+            <title>Вентиляционная решетка ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</title>
+        </c:when>
+
+        <c:otherwise>
+            <title>Вентиляционная решетка</title>
+        </c:otherwise>
+    </c:choose>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css">
 </head>
@@ -15,8 +27,22 @@
 <table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
     <tr>
         <td valign="top" colspan="3">
-            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> / <a href="/adaptive">Adaptive</a></p>
-            <h1>Вентиляционная решетка &laquo;${template}&raquo;</h1>
+            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> <!-- <a href="/adaptive">Adaptive</a>--></p>
+
+            <c:choose>
+                <c:when test="${width == null}">
+                    <h1>Вентиляционная решетка &#171;${template}&#187;</h1>
+                </c:when>
+
+                <c:when test="${width != null}">
+                    <h1>Вентиляционная решетка &#171;${template}&#187;. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</h1>
+                </c:when>
+
+                <c:otherwise>
+                    <h1>Вентиляционная решетка</h1>
+                </c:otherwise>
+            </c:choose>
+
             <c:if test="${cartService != null}">
                 <div align="right"><a href="/cart">Корзина ${count}</a></div>
             </c:if>

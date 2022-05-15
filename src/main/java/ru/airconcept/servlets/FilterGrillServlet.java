@@ -110,7 +110,6 @@ public class FilterGrillServlet extends HttpServlet {
                 listFilterCalcs.add (mf);
             }
 
-
             req.setAttribute ("listFilterCalcs", listFilterCalcs);
             req.setAttribute ("listGrills", listGrills);
             req.setAttribute ("material", materialID);

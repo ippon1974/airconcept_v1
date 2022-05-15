@@ -2,4 +2,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <hr>
-<p><a target="_blank" href="${pageContext.request.contextPath}/policy">Политика конфиденциальности</a> | <a target="_blank" href="${pageContext.request.contextPath}/privacy">Пользовательское соглашение</a></p>
+<p style="font-size: 0.7em"><a target="_blank" href="${pageContext.request.contextPath}/policy">Политика конфиденциальности</a> | <a target="_blank" href="${pageContext.request.contextPath}/privacy">Пользовательское соглашение</a></p>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(87347417, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/87347417" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->

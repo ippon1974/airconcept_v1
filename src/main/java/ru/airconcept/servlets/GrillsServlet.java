@@ -61,7 +61,6 @@ public class GrillsServlet extends HttpServlet {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String dt = myDateObj.format(myFormatObj);
 
-
         // Формируем строку запроса QueryString
         StringBuilder queryStirngCart = new StringBuilder();
         queryStirngCart.append ("template=")

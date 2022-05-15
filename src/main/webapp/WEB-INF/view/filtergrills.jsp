@@ -1,9 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Вентиляционные решетки</title>
+    <c:set var="materialname" value="" />
+    <c:if test="${material == 1}">
+        <c:set var="materialname" value="Материал: Латунь" />
+    </c:if>
+    <c:if test="${material == 2}">
+        <c:set var="materialname" value="Материал: Медь" />
+    </c:if>
+    <c:if test="${material == 3}">
+        <c:set var="materialname" value="Материал: Сталь" />
+    </c:if>
+
+    <title>Вентиляционные решетки ${materialname}. Длина: ${width}мм. Высота: ${height}мм. Толщина листа: ${size}мм.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -31,7 +43,9 @@
 </c:if>
 
 <div style="margin-left: 40px">
-    <h1><a href="${pageContext.request.contextPath}/catalog/grills">Вентиляционные решетки</a> → ${materialname}. Толщина листа: ${size} мм.</h1>
+    <h1><a href="${pageContext.request.contextPath}/catalog/grills">Вентиляционные решетки</a> → ${materialname}.
+        Длина: ${width}мм. Высота: ${height}мм.
+        Толщина листа: ${size}мм.</h1>
 </div>
 
 

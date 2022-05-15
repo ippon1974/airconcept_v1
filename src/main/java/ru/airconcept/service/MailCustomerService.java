@@ -46,12 +46,13 @@ public class MailCustomerService {
         modelCustomerOrder = customerOrderService.getByCustomerOrder(lastInsertId);
 
         getPropertiesServer();
+        String domen = "http://airconcept.ru";
 
         // Get the Session object.// and pass username and password
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "office");
+                return new PasswordAuthentication("post2074@gmail.com", "k4b8c321974");
             }
 
         });
@@ -121,11 +122,11 @@ public class MailCustomerService {
                     allTotalCostsNDC = allTotalCostsNDC.add (costCount);
                     listBuilder.append ("<tr>");
                     if(mList.get(i).getNameMaterial().equals ("Латунь")){
-                        listBuilder.append("<td>").append("<img src=").append("http://23.105.246.179:8080/").append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=").append(domen).append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     if(mList.get(i).getNameMaterial().equals ("Медь")){
-                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=http://airconcept.ru/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     if(mList.get(i).getNameMaterial().equals ("Сталь")){
-                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=http://airconcept.ru/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     listBuilder.append ("<td>").append ("Вентиляционная решетка ").append(mList.get(i).getNameTemplate()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getNameMaterial()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм &#215; ").append (mList.get (i).getHeight ()).append ("мм &#215; ") .append (mList.get (i).getSize()).append ("мм &#215;") .append("</td>");
@@ -170,7 +171,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "office");
+                return new PasswordAuthentication("post2074@gmail.com", "home");
             }
 
         });
@@ -229,11 +230,11 @@ public class MailCustomerService {
                     allTotalCostsNDC = allTotalCostsNDC.add (costCount);
                     listBuilder.append ("<tr>");
                     if(mList.get(i).getNameMaterial().equals ("Латунь")){
-                        listBuilder.append("<td>").append("<img src=").append("http://23.105.246.179:8080/").append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=").append("http://airconcept.ru/").append ("/img/cart/copper/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     if(mList.get(i).getNameMaterial().equals ("Медь")){
-                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=http://airconcept.ru/img/cart/brass/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     if(mList.get(i).getNameMaterial().equals ("Сталь")){
-                        listBuilder.append("<td>").append("<img src=http://23.105.246.179:8080/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
+                        listBuilder.append("<td>").append("<img src=http://airconcept.ru/img/cart/steel/").append(mList.get(i).getImg()).append (".png>") .append("</td>");}
                     listBuilder.append ("<td>").append ("Вентиляционная решетка ").append(mList.get(i).getNameTemplate()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getNameMaterial()).append ("</td>");
                     listBuilder.append ("<td>").append(mList.get(i).getWidth()).append ("мм ").append (mList.get (i).getHeight ()).append ("мм ") .append (mList.get (i).getSize()).append ("мм ") .append("</td>");
@@ -261,7 +262,6 @@ public class MailCustomerService {
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-
 
     }
 
