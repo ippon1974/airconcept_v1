@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
-<jsp:include page="/WEB-INF/view/menu.jsp" />
+<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
 
 <div style="">
     <div style="float: left; width: 80%; text-align: right">
@@ -114,6 +114,6 @@
     </div>
 </c:forEach>
 </div>
-<jsp:include page="/WEB-INF/view/footer.jsp" />
+<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
 </body>
 </html>

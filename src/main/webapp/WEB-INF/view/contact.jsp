@@ -8,7 +8,7 @@
     <title>Контакты</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/view/menu.jsp" />
+<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
 <h1>Контакты</h1>
 <div style="">
     <div style="float: left; width: 80%; text-align: right">
@@ -25,6 +25,6 @@
     140080 ул. Карла Маркса д. 117, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»
 </address>
 
-<jsp:include page="/WEB-INF/view/footer.jsp" />
+<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
 </body>
 </html>

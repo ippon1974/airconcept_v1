@@ -11,11 +11,11 @@
 <c:set var="contact" value="/WEB-INF/view/contact.jsp" />
 
 <ul>
-<c:if test="${uri.equals(index)}">
-    <li>Airconcept</li>
-    <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
-    <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
-</c:if>
+    <c:if test="${uri.equals(index)}">
+        <li>Airconcept</li>
+        <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
+        <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
+    </c:if>
 </ul>
 
 <ul>
@@ -41,5 +41,12 @@
         <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
     </c:if>
 </ul>
+
+
+
+
+
+
+
 
 

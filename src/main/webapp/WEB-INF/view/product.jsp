@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<jsp:include page="/WEB-INF/view/menu.jsp" />
+<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
 <table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
     <tr>
         <td valign="top" colspan="3">

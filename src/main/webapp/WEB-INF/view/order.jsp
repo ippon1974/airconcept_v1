@@ -90,6 +90,7 @@
     </tr>
 </table>
 <hr>
+
 <div style="margin-left: 15em">
 <p><a target="_blank" href="${pageContext.request.contextPath}/policy">Политика конфиденциальности</a> | <a target="_blank" href="${pageContext.request.contextPath}/privacy">Пользовательское соглашение</a></p>
 </div>

@@ -11,7 +11,7 @@
 
 <body>
 
-<jsp:include page="/WEB-INF/view/menu.jsp" />
+<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
 
 <div style="">
     <div style="float: left; width: 80%; text-align: right">
@@ -24,8 +24,7 @@
 
 <h2>Производство вентиляционных решеток из латуни, меди, нержавеющей стали</h2>
 
-
-<jsp:include page="/WEB-INF/view/footer.jsp" />
+<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
 
 </body>
 </html>
