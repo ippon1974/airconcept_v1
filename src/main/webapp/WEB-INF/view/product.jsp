@@ -44,7 +44,7 @@
             </c:choose>
 
             <c:if test="${cartService != null}">
-                <div align="right"><a href="/cart">Корзина ${count}</a></div>
+                <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
             </c:if>
         </td>
     </tr>

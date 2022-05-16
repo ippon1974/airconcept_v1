@@ -30,6 +30,13 @@ public class FilterGrillServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        CartService cartService = (CartService) session.getAttribute ("cartService");
+        // Проверякм количество товаров в корзине
+        if(cartService != null){
+            List<ModelCart> count = cartService.list();
+            req.setAttribute ("count", count.size ());
+        }
 
         String material = req.getParameter("materialid");
         int materialID = 0;

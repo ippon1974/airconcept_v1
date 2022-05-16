@@ -10,10 +10,18 @@
 <body>
 <jsp:include page="/WEB-INF/view/menu.jsp" />
 <h1>Контакты</h1>
+<div style="">
+    <div style="float: left; width: 80%; text-align: right">
+        <c:if test="${cartService != null}">
+            <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
+        </c:if>
+    </div>
+    <div style="clear: left"></div>
+</div>
 <p>Телефон: +7 (925) 585-33-71 В рабочие дни с 9:00 до 19:00. Суббота и воскресенье выходные дни</p>
 <p>Электронная почта: box@wcut.ru</p>
 
-<address>
+<address style="font-style: normal">
     140080 ул. Карла Маркса д. 117, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»
 </address>
 

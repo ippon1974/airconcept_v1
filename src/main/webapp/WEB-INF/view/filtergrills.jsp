@@ -25,7 +25,7 @@
 <div style="">
     <div style="float: left; width: 80%; text-align: right">
         <c:if test="${cartService != null}">
-            <div align=""><a href="/cart">Корзина</a></div>
+            <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
         </c:if>
     </div>
     <div style="clear: left"></div>

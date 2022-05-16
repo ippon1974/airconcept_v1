@@ -13,8 +13,17 @@
 
 <jsp:include page="/WEB-INF/view/menu.jsp" />
 
+<div style="">
+    <div style="float: left; width: 80%; text-align: right">
+        <c:if test="${cartService != null}">
+            <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
+        </c:if>
+    </div>
+    <div style="clear: left"></div>
+</div>
 
 <h2>Производство вентиляционных решеток из латуни, меди, нержавеющей стали</h2>
+
 
 <jsp:include page="/WEB-INF/view/footer.jsp" />
 

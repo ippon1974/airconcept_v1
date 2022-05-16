@@ -53,6 +53,11 @@ public class GrillsServlet extends HttpServlet {
         HttpSession session = req.getSession();
         CartService cartService = (CartService) session.getAttribute ("cartService");
         req.setAttribute ("cartService", cartService);
+        // Проверякм количество товаров в корзине
+        if(cartService != null){
+            List<ModelCart> count = cartService.list();
+            req.setAttribute ("count", count.size ());
+        }
         req.getRequestDispatcher("/WEB-INF/view/grills.jsp").forward(req, resp);
     }
 
