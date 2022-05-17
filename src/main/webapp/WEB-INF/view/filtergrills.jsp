@@ -18,9 +18,12 @@
     <title>Вентиляционные решетки ${materialname}. Длина: ${width}мм. Высота: ${height}мм. Толщина листа: ${size}мм.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
 </head>
 <body>
+<div style="padding: 0 0 0 30px">
 <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
+</div>
 
 <div style="">
     <div style="float: left; width: 80%; text-align: right">

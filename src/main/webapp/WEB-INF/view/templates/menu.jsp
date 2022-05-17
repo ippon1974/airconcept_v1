@@ -10,7 +10,7 @@
 <c:set var="grills" value="/WEB-INF/view/grills.jsp" />
 <c:set var="contact" value="/WEB-INF/view/contact.jsp" />
 
-<ul>
+<ul class="nav">
     <c:if test="${uri.equals(index)}">
         <li>Airconcept</li>
         <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
@@ -18,7 +18,7 @@
     </c:if>
 </ul>
 
-<ul>
+<ul class="nav">
     <c:if test="${uri.equals(grills)}">
         <li><a href="/">Airconcept</a></li>
         <li>Шаблоны решеток</li>
@@ -26,7 +26,7 @@
     </c:if>
 </ul>
 
-<ul>
+<ul class="nav">
     <c:if test="${uri.equals(contact)}">
         <li><a href="/">Airconcept</a></li>
         <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
@@ -34,10 +34,10 @@
     </c:if>
 </ul>
 
-<ul>
+<ul class="nav">
     <c:if test="${query != null}">
         <li><a href="${pageContext.request.contextPath}/">Airconcept</a></li>
-        <li><a href="${pageContext.request.contextPath}/catalog/grills"><strong>Шаблоны решеток</strong></a> </li>
+        <li><a style="color: red" href="${pageContext.request.contextPath}/catalog/grills"><strong>Шаблоны решеток</strong></a> </li>
         <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
     </c:if>
 </ul>

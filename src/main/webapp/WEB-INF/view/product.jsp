@@ -8,6 +8,7 @@
     <c:choose>
         <c:when test="${width == null}">
             <title>Вентиляционная решетка ${template}</title>
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
         </c:when>
 
         <c:when test="${width != null}">
@@ -20,10 +21,13 @@
     </c:choose>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
 </head>
 
 <body>
+<div style="padding: 0 0 0 100px">
 <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
+</div>
 <table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
     <tr>
         <td valign="top" colspan="3">
