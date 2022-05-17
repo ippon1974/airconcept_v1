@@ -59,7 +59,7 @@
                 <div>
                     <fieldset>
                         <legend>Шаблон</legend>
-                        <select class="custom-select" id="template" name="template">
+                        <select style="font-size: 1.3em; font-weight: bold" class="custom-select" id="template" name="template">
                             <c:forEach var="listGrills" items="${listGrills}">
                                 <c:if test="${templateuri == listGrills.gtransliterations}">
                                     <option value="${listGrills.gtransliterations}" selected>${listGrills.gname}</option>
@@ -74,7 +74,7 @@
                 <div>
                     <fieldset>
                         <legend>Материал</legend>
-                        <select class="custom-select" id="materialid" name="materialid">
+                        <select style="font-size: 1.3em; font-weight: bold" class="custom-select" id="materialid" name="materialid">
                             <c:forEach var="modelMaterial" items="${modelMaterial}">
                                 <c:if test="${material == modelMaterial.mtype}">
                                     <option value="${modelMaterial.mtype}" selected>${modelMaterial.mname}</option>
@@ -89,7 +89,7 @@
                 <div>
                     <fieldset>
                         <legend>Толщина листа</legend>
-                        <select class="custom-select" id="size" name="size">
+                        <select style="font-size: 1.3em; font-weight: bold" class="custom-select" id="size" name="size">
                             <c:forEach var="modelSize" items="${modelSize}">
                                 <c:if test="${size == modelSize.size}">
                                     <option value="${modelSize.size}" selected>${modelSize.size}</option>
@@ -105,14 +105,14 @@
                 <div>
                     <fieldset>
                         <legend>Длина</legend>
-                        <input type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                        <input style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
                     </fieldset>
                 </div>
 
                 <div>
                     <fieldset>
                         <legend>Высота</legend>
-                        <input type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
+                        <input style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
                     </fieldset>
                 </div>
 
@@ -149,8 +149,7 @@
             </c:choose>
 
             <h2 class="war">Вычисляем</h2>
-
-            Результаты вычесления. Вычисляем примерную стоимость продукта.
+            Вычисляем примерную стоимость продукта.
             <dl>
                 <dt>Шаблон</dt>
                 <dd>${template}</dd>
@@ -164,22 +163,22 @@
                 <dd>${height} мм.</dd>
             </dl>
 
-            <dl class="calcTotal">
-                <dt>Aspect </dt>
-                <dd>${aspect}</dd>
-                <dt>Площцадь </dt>
-                <dd>${area} кв. м.</dd>
-                <dt>Стоимость 1 кв. м. склад </dt>
-                <dd>${modelCalc.getCost()} руб.</dd>
-                <dt>Длина реза</dt>
-                <dd>${allcutlength} пог. м.</dd>
-                <dt>Стоимость реза 1 пог. м.</dt>
-                <dd>${modelCalc.getCostmcut()}  руб.</dd>
-            </dl>
+<%--            <dl class="calcTotal">--%>
+<%--                <dt>Aspect </dt>--%>
+<%--                <dd>${aspect}</dd>--%>
+<%--                <dt>Площцадь </dt>--%>
+<%--                <dd>${area} кв. м.</dd>--%>
+<%--                <dt>Стоимость 1 кв. м. склад </dt>--%>
+<%--                <dd>${modelCalc.getCost()} руб.</dd>--%>
+<%--                <dt>Длина реза</dt>--%>
+<%--                <dd>${allcutlength} пог. м.</dd>--%>
+<%--                <dt>Стоимость реза 1 пог. м.</dt>--%>
+<%--                <dd>${modelCalc.getCostmcut()}  руб.</dd>--%>
+<%--            </dl>--%>
 
             <div class="finalCalc">
-                <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>
-                <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>
+<%--                <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>--%>
+<%--                <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>--%>
 
                 <div>
                     <h3>Итого: ${total} руб.</h3>
