@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="4672193bab487671" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <meta name="description" content="Производство вентиляционных решеток различного дизана из латуни, меди, нержавеющей стали." />
     <title>Декоративные вентиляционные решетки из латуни меди стали</title>
 </head>
 

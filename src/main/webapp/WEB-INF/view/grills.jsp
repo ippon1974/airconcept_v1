@@ -4,6 +4,7 @@
 
 <html>
 <head>
+    <meta name="description" content="Шаблоны вентиляционных решеток. Производство вентиляционных решеток различного дизана из латуни, меди, нержавеющей стали." />
     <title>Шаблоны вентиляционных решеток</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">

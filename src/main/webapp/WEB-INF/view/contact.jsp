@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <meta name="description" content="Контакты. Компания AirConcept. Производство вентиляционных решеток в Москве" />
     <title>Контакты</title>
 </head>
 <body>
@@ -19,7 +20,8 @@
     </div>
     <div style="clear: left"></div>
 </div>
-<p>Телефон: +7 (925) 585-33-71 В рабочие дни с 9:00 до 19:00. Суббота и воскресенье выходные дни</p>
+<p>Телефон: +7 (925) 585-33-71</p>
+<p>В рабочие дни с 9:00 до 19:00. Суббота и воскресенье выходные дни</p>
 <p>Электронная почта: box@wcut.ru</p>
 
 <address style="font-style: normal">
