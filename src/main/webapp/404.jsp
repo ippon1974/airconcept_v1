@@ -1,16 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>404 Error - Page Not Found</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 Ошибка. Извините, запрошенная вами страница не найдена.</title>
 </head>
+
 <body>
-<center>
-    <h1>404 Erorr Page</h1>
-    <h1>Sorry, the page you requested were not found.</h1>
-</center>
+<div style="text-align: center">
+    <h1>404 Ошибка</h1>
+    <h1>Извините, запрошенная вами страница не найдена.</h1>
+    <p><a href="${pageContext.request.contextPath}/">Главная</a> | <a href="${pageContext.request.contextPath}/contact">Контакты</a></p>
+</div>
 </body>
 </html>
