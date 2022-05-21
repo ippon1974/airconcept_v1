@@ -32,7 +32,7 @@
 <table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
     <tr>
         <td valign="top" colspan="3">
-            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> <!-- <a href="/adaptive">Adaptive</a>--></p>
+<%--            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> <!-- <a href="/adaptive">Adaptive</a>--></p>--%>
 
             <c:choose>
                 <c:when test="${width == null}">

@@ -46,7 +46,7 @@
 </c:if>
 
 <div style="margin-left: 40px">
-    <h1><a href="${pageContext.request.contextPath}/catalog/grills">Вентиляционные решетки</a> → ${materialname}.
+    <h1>${materialname}.
         Длина: ${width}мм. Высота: ${height}мм.
         Толщина листа: ${size}мм.</h1>
 </div>
