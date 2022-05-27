@@ -193,7 +193,7 @@ dt:after {
 }
 
 .finalCalc > div{
-    text-transform: uppercase;
+    text-transform: none;
     padding: 5px;
 }
 

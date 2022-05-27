@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" type = "text/javascript"></script>
 </head>
 
 <body>
@@ -163,7 +164,6 @@
                 <dt>Высота шаблона</dt>
                 <dd>${height} мм.</dd>
             </dl>
-
 <%--            <dl class="calcTotal">--%>
 <%--                <dt>Aspect </dt>--%>
 <%--                <dd>${aspect}</dd>--%>
@@ -185,7 +185,16 @@
                     <h3>Итого: ${total} руб.</h3>
                     <h3>Итого с НДС: ${totalNdc} руб.</h3>
                 </div>
+
+    <c:if test="${totalNdc != null}">
+        <p id="foo">http://${pageContext.request.getServerName()}/catalog/grills?${cartStringGoods}</p>
+        <!-- data-clipboard-target - ссылка на, то что будет копироваться -->
+        <button class="btn" data-clipboard-target="#foo">Копировать ссылку</button>
+    </c:if>
+
+
             </div>
+
 
         </td>
         <td>
@@ -201,10 +210,13 @@
             <c:if test="${material == 3}">
                 <p><img src="/img/steel/${transliterations}.png"></p>
             </c:if>
+
         </td>
     </tr>
 </table>
 
-<jsp:include page="/WEB-INF/view/footer.jsp" />
+
+<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+<script src="/js/bufer.js"></script>
 </body>
 </html>
