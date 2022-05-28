@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <meta name="description" content="Контакты. Компания AirConcept. Производство вентиляционных решеток в Москве" />
     <title>Контакты</title>
 </head>

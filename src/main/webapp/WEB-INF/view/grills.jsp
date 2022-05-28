@@ -54,8 +54,8 @@
         <div class="about">
             <figure>
                 <a href="/catalog/grills?template=${listGrills.gtransliterations}">
-                    <img src="/img/showcase/blank/${listGrills.gtransliterations}.png"></a>
-                <figcaption><a href="/catalog/grills?template=${listGrills.gtransliterations}">${listGrills.gname}</a><br></figcaption>
+                    <img alt="Шаблон решетки ${listGrills.gname}" src="/img/showcase/blank/${listGrills.gtransliterations}.png"></a>
+                <figcaption>Шаблон: <a title="Шаблон решетки ${listGrills.gname}" href="/catalog/grills?template=${listGrills.gtransliterations}">${listGrills.gname}</a><br></figcaption>
             </figure>
         </div>
     </c:forEach>

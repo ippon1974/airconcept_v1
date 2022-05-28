@@ -180,11 +180,12 @@
             <div class="finalCalc">
 <%--                <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>--%>
 <%--                <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>--%>
-
-                <div>
-                    <h3>Итого: ${total} руб.</h3>
-                    <h3>Итого с НДС: ${totalNdc} руб.</h3>
+        <c:if test="${totalNdc != null}">
+                <div class="pricetotal">
+<%--                    <h3>Итого: ${total} руб.</h3>--%>
+                    <h3>Итого: ${totalNdc} руб.</h3>
                 </div>
+        </c:if>
 
     <c:if test="${totalNdc != null}">
         <p id="foo">http://${pageContext.request.getServerName()}/catalog/grills?${cartStringGoods}</p>
@@ -199,16 +200,16 @@
         </td>
         <td>
             <c:if test="${material == null}">
-                <p><img src="/img/blank/${transliterations}.png"></p>
+                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/blank/${transliterations}.png"></p>
             </c:if>
             <c:if test="${material == 1}">
-                <p><img src="/img/copper/${transliterations}.png"></p>
+                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/copper/${transliterations}.png"></p>
             </c:if>
             <c:if test="${material == 2}">
-                <p><img src="/img/brass/${transliterations}.png"></p>
+                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/brass/${transliterations}.png"></p>
             </c:if>
             <c:if test="${material == 3}">
-                <p><img src="/img/steel/${transliterations}.png"></p>
+                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/steel/${transliterations}.png"></p>
             </c:if>
 
         </td>
@@ -217,6 +218,6 @@
 
 
 <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
-<script src="/js/bufer.js"></script>
+<script src="${pageContext.request.contextPath}/js/bufer.js"></script>
 </body>
 </html>

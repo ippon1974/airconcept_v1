@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="4672193bab487671" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <meta name="description" content="Производство вентиляционных решеток различного дизана из латуни, меди, нержавеющей стали." />
     <title>Декоративные вентиляционные решетки из латуни, меди,нержавеющей стали.</title>
 </head>
@@ -24,7 +25,7 @@
     <div style="clear: left"></div>
 </div>
 
-<h2>Производство вентиляционных решеток из латуни, меди, нержавеющей стали</h2>
+<h1>Производство вентиляционных решеток из латуни, меди, нержавеющей стали</h1>
 
 <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
 
