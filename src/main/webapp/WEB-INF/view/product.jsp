@@ -107,7 +107,14 @@
                 <div>
                     <fieldset>
                         <legend>Длина</legend>
-                        <input style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+
+                        <c:if test="${totalNdc == null}">
+                            <input autofocus style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                        </c:if>
+                        <c:if test="${totalNdc != null}">
+                            <input style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                        </c:if>
+
                     </fieldset>
                 </div>
 
