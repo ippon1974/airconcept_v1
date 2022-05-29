@@ -18,6 +18,7 @@
     <title>Вентиляционные решетки ${materialname}. Длина: ${width}мм. Высота: ${height}мм. Толщина листа: ${size}мм.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/form_filter.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
 </head>
 <body>
@@ -52,37 +53,61 @@
 </div>
 
 
-<div style="margin-left: 40px; width: 850px;">
-    <form action="/filtergrills">
+<div style="margin-left: 40px; width: 90%;">
 
-        <select class="custom-select" id="materialid" name="materialid">
-            <c:forEach var="modelMaterial" items="${modelMaterial}">
-                <c:if test="${material == modelMaterial.mtype}">
-                    <option value="${modelMaterial.mtype}" selected>${modelMaterial.mname}</option>
-                </c:if>
-                <c:if test="${material != modelMaterial.mtype}">
-                    <option value="${modelMaterial.mtype}">${modelMaterial.mname}</option>
-                </c:if>
-            </c:forEach>
-        </select>
-
-
-        <select class="custom-select" id="size" name="size">
-            <c:forEach var="modelSize" items="${modelSize}">
-                <c:if test="${size == modelSize.size}">
-                    <option value="${modelSize.size}" selected>${modelSize.size}</option>
-                </c:if>
-                <c:if test="${size != modelSize.size}">
-                    <option value="${modelSize.size}">${modelSize.size}</option>
-                </c:if>
-            </c:forEach>
-        </select>
-
-        <input type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
-        <input type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
-        <input type="submit" value="GO" />
+    <form method="get" action="/filtergrills">
+        <div class="container">
+            <div class="item item-1">
+                <div class="col-materialid">
+                    <label for="materialid">Материал</label>
+                </div>
+                <select class="custom-select" id="materialid" name="materialid">
+                    <c:forEach var="modelMaterial" items="${modelMaterial}">
+                        <c:if test="${material == modelMaterial.mtype}">
+                            <option value="${modelMaterial.mtype}" selected>${modelMaterial.mname}</option>
+                        </c:if>
+                        <c:if test="${material != modelMaterial.mtype}">
+                            <option value="${modelMaterial.mtype}">${modelMaterial.mname}</option>
+                        </c:if>
+                    </c:forEach>
+                </select>
+            </div>
+            <div class="item item-2">
+                <div class="col-size">
+                    <label for="size">Толщина</label>
+                </div>
+                <select class="custom-select" id="size" name="size">
+                    <c:forEach var="modelSize" items="${modelSize}">
+                        <c:if test="${size == modelSize.size}">
+                            <option value="${modelSize.size}" selected>${modelSize.size}</option>
+                        </c:if>
+                        <c:if test="${size != modelSize.size}">
+                            <option value="${modelSize.size}">${modelSize.size}</option>
+                        </c:if>
+                    </c:forEach>
+                </select>
+            </div>
+            <div class="item item-3">
+                <div class="col-width">
+                    <label for="width">Длина</label>
+                </div>
+                <input class="size_input" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+            </div>
+            <div class="item item-4">
+                <div class="col-height">
+                    <label for="height">Высота</label>
+                </div>
+                <input class="size_input" type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
+            </div>
+            <div class="item item-5">
+                <input class="button" type="submit" value="Выбрать" />
+            </div>
+        </div>
     </form>
+    <br>
 </div>
+
+<%--<div class="line"></div>--%>
 
 <div id="images">
 <c:forEach var="listFilterCalcs" items="${listFilterCalcs}">

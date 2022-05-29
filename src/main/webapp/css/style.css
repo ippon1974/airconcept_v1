@@ -52,5 +52,9 @@ p.copyring{
 }
 
 .map{
-    padding: 15px;
+    padding: 20px;
+}
+
+.line {
+    border-bottom: 1px solid #f00; /* Параметры линии */
 }

@@ -26,13 +26,12 @@
 <p>Электронная почта: box@wcut.ru</p>
 
 <address style="font-style: normal">
-    140080 ул. Карла Маркса д. 117, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»
+    140080 ул. Карла Маркса д. 117 Б, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»
 </address>
 
 <div class="map">
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af6a25cbccd3d03fdf25afbd6fa0ae8a71873847b1239154e647b92b4d4c73cb9&amp;width=1024&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af6a25cbccd3d03fdf25afbd6fa0ae8a71873847b1239154e647b92b4d4c73cb9&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
 </div>
-
 
 <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
 </body>
