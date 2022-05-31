@@ -3,14 +3,6 @@
     src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
 }
 
-@font-face{
-    font-family: 'LeagueGothicRegular';
-    src:  url('/font/LeagueGothicRegular.eot');
-    src:  url('/font/LeagueGothicRegular.eot#iefix') format('embedded-opentype'),
-    url('/font/LeagueGothicRegular.woff') format('woff'),
-    url('/font/LeagueGothicRegular.ttf') format('truetype');
-url('/font/LeagueGothicRegular.svg') format('svg');
-}
 
 .textMy{
     font-family: 'Bitstream Vera Serif Bold', Arial, sans-serif;
@@ -114,19 +106,32 @@ input[type=text] {
 }
 
 
-input[type=submit] {
-    padding: 5px 30px;
-    margin: 0 auto;
-    background: coral;
-    /*border:0 none;*/
-    width: 200px;
-    height: 50px;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 0;
-    font-weight: bolder;
-    text-transform: uppercase;
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px; /* Уголки */
 }
+
+
+/*input[type=submit] {  !* button submit *!*/
+/*    padding: 5px 30px;*/
+/*    margin: 0 auto;*/
+/*    background: coral;*/
+/*    !*border:0 none;*!*/
+/*    width: 200px;*/
+/*    height: 50px;*/
+/*    cursor:pointer;*/
+/*    -webkit-border-radius: 5px;*/
+/*    border-radius: 0;*/
+/*    font-weight: bolder;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
 dl {
     display: flex;

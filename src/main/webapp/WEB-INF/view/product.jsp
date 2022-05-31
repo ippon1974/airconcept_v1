@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,211 +19,212 @@
             <title>Вентиляционная решетка</title>
         </c:otherwise>
     </c:choose>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/air_02.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page1.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" type = "text/javascript"></script>
 </head>
 
 <body>
-<div style="padding: 0 0 0 100px">
-<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
-</div>
-<table align="center" cellpadding="5" cellspacing="5" border="0" width="90%">
-    <tr>
-        <td valign="top" colspan="3">
-<%--            <p><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> <!-- <a href="/adaptive">Adaptive</a>--></p>--%>
 
-            <c:choose>
-                <c:when test="${width == null}">
-                    <h1>Вентиляционная решетка &#171;${template}&#187;</h1>
-                </c:when>
+<div class="container">
+    <div class="item menu">
+        <div>
+            <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
+        </div>
+    </div>
+    <div class="item cart">
+        <c:if test="${cartService != null}">
+            <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
+        </c:if>
+    </div>
+    <div class="item title">
 
-                <c:when test="${width != null}">
-                    <h1>Вентиляционная решетка &#171;${template}&#187;. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</h1>
-                </c:when>
+        <c:choose>
+            <c:when test="${width == null}">
+                <h1>Вентиляционная решетка &#171;${template}&#187;</h1>
+            </c:when>
 
-                <c:otherwise>
-                    <h1>Вентиляционная решетка</h1>
-                </c:otherwise>
-            </c:choose>
+            <c:when test="${width != null}">
+                <h1>Вентиляционная решетка &#171;${template}&#187;. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</h1>
+            </c:when>
 
-            <c:if test="${cartService != null}">
-                <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
-            </c:if>
-        </td>
-    </tr>
-    <tr valign="top">
-        <td width="40%">
-            <form method="get" id="search">
-                <%--                <input type="hidden" name="number" value="1">--%>
+            <c:otherwise>
+                <h1>Вентиляционная решетка</h1>
+            </c:otherwise>
+        </c:choose>
+    </div>
+    <div class="item sideform">
+        <form method="get" id="search">
+
+            <div>
+                <fieldset>
+                    <legend>Шаблон</legend>
+                    <select class="custom-select" id="template" name="template">
+                        <c:forEach var="listGrills" items="${listGrills}">
+                            <c:if test="${templateuri == listGrills.gtransliterations}">
+                                <option value="${listGrills.gtransliterations}" selected>${listGrills.gname}</option>
+                            </c:if>
+                            <c:if test="${templateuri != listGrills.gtransliterations}">
+                                <option value="${listGrills.gtransliterations}">${listGrills.gname}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Материал</legend>
+                    <select class="custom-select" id="materialid" name="materialid">
+                        <c:forEach var="modelMaterial" items="${modelMaterial}">
+                            <c:if test="${material == modelMaterial.mtype}">
+                                <option value="${modelMaterial.mtype}" selected>${modelMaterial.mname}</option>
+                            </c:if>
+                            <c:if test="${material != modelMaterial.mtype}">
+                                <option value="${modelMaterial.mtype}">${modelMaterial.mname}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Толщина листа</legend>
+                    <select class="custom-select" id="size" name="size">
+                        <c:forEach var="modelSize" items="${modelSize}">
+                            <c:if test="${size == modelSize.size}">
+                                <option value="${modelSize.size}" selected>${modelSize.size}</option>
+                            </c:if>
+                            <c:if test="${size != modelSize.size}">
+                                <option value="${modelSize.size}">${modelSize.size}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Длина</legend>
+                    <c:if test="${totalNdc == null}">
+                        <input autofocus class="custom-size" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                    </c:if>
+                    <c:if test="${totalNdc != null}">
+                        <input class="custom-size" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                    </c:if>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Высота</legend>
+                    <c:if test="${totalNdc == null}">
+                        <input class="custom-size" type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
+                    </c:if>
+                    <c:if test="${totalNdc != null}">
+                        <input class="custom-size" type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
+                    </c:if>
+<%--                    <input class="custom-size" type="number" min="60" max="1500" value="750" name="height" id="height" required/>--%>
+                </fieldset>
+            </div>
+            <div>
+                <br>
+                <input class="button" type="submit" value="Расчет "/>
+            </div>
+
+        </form>
+    </div>
+    <div class="item result">
+        <div class="cart_add_result">
+        <c:choose>
+            <c:when test="${isStr}">
+                <h3>Этот товар добавлен в корзину</h3>
+            </c:when>
+            <c:when test="${totalNdc != null}">
                 <div>
-                    <fieldset>
-                        <legend>Шаблон</legend>
-                        <select style="font-size: 1.3em; font-weight: bold" class="custom-select" id="template" name="template">
-                            <c:forEach var="listGrills" items="${listGrills}">
-                                <c:if test="${templateuri == listGrills.gtransliterations}">
-                                    <option value="${listGrills.gtransliterations}" selected>${listGrills.gname}</option>
-                                </c:if>
-                                <c:if test="${templateuri != listGrills.gtransliterations}">
-                                    <option value="${listGrills.gtransliterations}">${listGrills.gname}</option>
-                                </c:if>
-                            </c:forEach>
-                        </select>
-                    </fieldset>
+                    <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">
+                        <input class="button" type="submit" value="В корзину">
+                    </form>
                 </div>
-                <div>
-                    <fieldset>
-                        <legend>Материал</legend>
-                        <select style="font-size: 1.3em; font-weight: bold" class="custom-select" id="materialid" name="materialid">
-                            <c:forEach var="modelMaterial" items="${modelMaterial}">
-                                <c:if test="${material == modelMaterial.mtype}">
-                                    <option value="${modelMaterial.mtype}" selected>${modelMaterial.mname}</option>
-                                </c:if>
-                                <c:if test="${material != modelMaterial.mtype}">
-                                    <option value="${modelMaterial.mtype}">${modelMaterial.mname}</option>
-                                </c:if>
-                            </c:forEach>
-                        </select>
-                    </fieldset>
-                </div>
-                <div>
-                    <fieldset>
-                        <legend>Толщина листа</legend>
-                        <select style="font-size: 1.3em; font-weight: bold" class="custom-select" id="size" name="size">
-                            <c:forEach var="modelSize" items="${modelSize}">
-                                <c:if test="${size == modelSize.size}">
-                                    <option value="${modelSize.size}" selected>${modelSize.size}</option>
-                                </c:if>
-                                <c:if test="${size != modelSize.size}">
-                                    <option value="${modelSize.size}">${modelSize.size}</option>
-                                </c:if>
-                            </c:forEach>
-                        </select>
-                    </fieldset>
-                </div>
+            </c:when>
+            <c:otherwise>
 
-                <div>
-                    <fieldset>
-                        <legend>Длина</legend>
+            </c:otherwise>
+        </c:choose>
+        </div>
 
-                        <c:if test="${totalNdc == null}">
-                            <input autofocus style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
-                        </c:if>
-                        <c:if test="${totalNdc != null}">
-                            <input style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
-                        </c:if>
-
-                    </fieldset>
-                </div>
-
-                <div>
-                    <fieldset>
-                        <legend>Высота</legend>
-                        <input style="width: 300px; font-size: 1.4em; font-weight: bold" type="number" min="60" max="1500" value="${height}" name="height" id="height" required/>
-                    </fieldset>
-                </div>
-
-                <div>
-                    <br>
-                    <input type="submit" value="Расчет "/>
-                </div>
-
-            </form>
-        </td>
-        <td valign="top">
-            <%--            <c:if test="${totalNdc != null}">--%>
-            <%--                <div>--%>
-            <%--                    <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">--%>
-            <%--                        <input type="submit" value="В корзину">--%>
-            <%--                    </form>--%>
-            <%--                </div>--%>
-            <%--            </c:if>--%>
-
-            <c:choose>
-                <c:when test="${isStr}">
-                    <h3>Этот товар добавлен в корзину</h3>
-                </c:when>
-                <c:when test="${totalNdc != null}">
-                    <div>
-                        <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">
-                            <input type="submit" value="В корзину">
-                        </form>
-                    </div>
-                </c:when>
-                <c:otherwise>
-
-                </c:otherwise>
-            </c:choose>
-
-            <h2 class="war">Вычисляем</h2>
-            Вычисляем примерную стоимость продукта.
+        <c:if test="${totalNdc == null}">
+            <dl>
+                <dt>Шаблон</dt>
+                <dd>Не выбран</dd>
+                <dt>Материал</dt>
+                <dd>Не выбран</dd>
+                <dt>Толщина</dt>
+                <dd>Не выбрана</dd>
+                <dt>Длина</dt>
+                <dd>Нет размера</dd>
+                <dt>Высота</dt>
+                <dd>Нет размера</dd>
+            </dl>
+        </c:if>
+        <c:if test="${totalNdc != null}">
             <dl>
                 <dt>Шаблон</dt>
                 <dd>${template}</dd>
                 <dt>Материал</dt>
                 <dd>${modelCalc.getMname()}</dd>
-                <dt>Толщина материала</dt>
+                <dt>Толщина</dt>
                 <dd>${modelCalc.getSize()} мм.</dd>
-                <dt>Длина шаблона</dt>
+                <dt>Длина</dt>
                 <dd>${width} мм.</dd>
-                <dt>Высота шаблона</dt>
+                <dt>Высота</dt>
                 <dd>${height} мм.</dd>
             </dl>
-<%--            <dl class="calcTotal">--%>
-<%--                <dt>Aspect </dt>--%>
-<%--                <dd>${aspect}</dd>--%>
-<%--                <dt>Площцадь </dt>--%>
-<%--                <dd>${area} кв. м.</dd>--%>
-<%--                <dt>Стоимость 1 кв. м. склад </dt>--%>
-<%--                <dd>${modelCalc.getCost()} руб.</dd>--%>
-<%--                <dt>Длина реза</dt>--%>
-<%--                <dd>${allcutlength} пог. м.</dd>--%>
-<%--                <dt>Стоимость реза 1 пог. м.</dt>--%>
-<%--                <dd>${modelCalc.getCostmcut()}  руб.</dd>--%>
-<%--            </dl>--%>
-
-            <div class="finalCalc">
-<%--                <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>--%>
-<%--                <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>--%>
-        <c:if test="${totalNdc != null}">
-                <div class="pricetotal">
-<%--                    <h3>Итого: ${total} руб.</h3>--%>
-                    <h3>Итого: ${totalNdc} руб.</h3>
-                </div>
         </c:if>
 
-    <c:if test="${totalNdc != null}">
-        <p id="foo">http://${pageContext.request.getServerName()}/catalog/grills?${cartStringGoods}</p>
-        <!-- data-clipboard-target - ссылка на, то что будет копироваться -->
-        <button class="btn" data-clipboard-target="#foo">Копировать ссылку</button>
-    </c:if>
-
-
-            </div>
-
-
-        </td>
-        <td>
-            <c:if test="${material == null}">
-                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/blank/${transliterations}.png"></p>
-            </c:if>
-            <c:if test="${material == 1}">
-                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/copper/${transliterations}.png"></p>
-            </c:if>
-            <c:if test="${material == 2}">
-                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/brass/${transliterations}.png"></p>
-            </c:if>
-            <c:if test="${material == 3}">
-                <p><img alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/steel/${transliterations}.png"></p>
+        <div class="finalCalc">
+            <%--                <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>--%>
+            <%--                <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>--%>
+            <c:if test="${totalNdc != null}">
+                <div class="pricetotal">
+                    <p>Итого: ${totalNdc} руб.</p>
+                </div>
             </c:if>
 
-        </td>
-    </tr>
-</table>
+            <c:if test="${totalNdc != null}">
+                <div class="copy_link">
+                <p id="foo">http://${pageContext.request.getServerName()}/catalog/grills?${cartStringGoods}</p>
+                <!-- data-clipboard-target - ссылка на, то что будет копироваться -->
+                <button class="btn" data-clipboard-target="#foo">Копировать ссылку</button>
+                </div>
+            </c:if>
+
+        </div>
 
 
-<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
-<script src="${pageContext.request.contextPath}/js/bufer.js"></script>
+    </div>
+    <div class="item img">
+        <c:if test="${material == null}">
+            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/blank/${transliterations}.png"></p>
+        </c:if>
+        <c:if test="${material == 1}">
+            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/copper/${transliterations}.png"></p>
+        </c:if>
+        <c:if test="${material == 2}">
+            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/brass/${transliterations}.png"></p>
+        </c:if>
+        <c:if test="${material == 3}">
+            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/steel/${transliterations}.png"></p>
+        </c:if>
+    </div>
+    <div class="item footer">
+        <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+        <script src="${pageContext.request.contextPath}/js/bufer.js"></script>
+    </div>
+</div>
+
+
 </body>
 </html>

@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav li {
+    float: left;
+    padding: 10px;
+    font-size: 0.9em;
+    font-family: Arial;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav li a {
+    color: darkblue;
+}
+
+
+.item{
+    padding: 20px;
+}
+
+h1, h2, h3{
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+            'menu menu cart'
+            'title title title'
+            'sideform result img'
+            'footer footer footer';
+}
+
+.menu {
+    grid-area: menu;
+}
+.cart{
+    grid-area: cart;
+}
+.title{
+    grid-area: title;
+}
+.sideform{
+    grid-area: sideform;
+}
+.result{
+    grid-area: result;
+}
+.img{
+    grid-area: img;
+}
+.footer{
+    grid-area: footer;
+}
+
+.title h1{
+    font-size: 1.8em;
+}
+
+.sideform div{
+    margin: 0 0 0.5em 0;
+}
+
+fieldset legend{
+    margin: 0 0 0.5em 0;
+}
+.custom-select{
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.custom-size{
+    width: 95%;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px; /* Уголки */
+}
+
+.cart_add_result{
+    margin: 1.5em 0 0 0;
+}
+
+.cart_add_result h3{
+    font-size: 1.0em;
+    color: firebrick;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.result dl {
+    margin-top: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.result dt,
+.result dd {
+    box-sizing: border-box;
+    padding: 2px;
+    width: 50%;
+    margin: 0;
+}
+
+.result dt {
+    text-align: left;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.result dd {
+    padding-left: 10px;
+}
+
+.result dt:after {
+    content: ":";
+}
+
+.finalCalc{
+    margin: 1.5em 0 0 0;
+}
+
+.copy_link{
+    margin: 1.5em 0 0 0;
+}
+
+.copy_link p{
+    margin: 0 0 10px 0;
+    font-size: 0.8em;
+}
+
+@media (max-width: 601px) {
+    .container {
+        grid-template-areas:
+                'menu'
+                'cart'
+                'title'
+                'sideform'
+                'result'
+                'img'
+                'footer';
+        grid-template-columns: 1fr;
+    }
+
+    .custom-select{
+        font-size: 1.5em;
+    }
+
+    .custom-size{
+        font-size: 1.5em;
+    }
+
+    article > h1 {
+        font-size: 5vh;
+        text-transform: uppercase;
+    }
+
+}
+
+.pricetotal p{
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: beige;
+}
+
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

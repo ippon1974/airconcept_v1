@@ -13,7 +13,7 @@
 <body>
 
 <form action="/update" method="post">
-<table align="center" cellspacing="2" cellpadding="2" border="0" width="70%">
+<table align="center" cellspacing="2" cellpadding="2" border="0" width="95%">
     <tr>
         <td colspan="7">
             <h1>Корзина</h1>

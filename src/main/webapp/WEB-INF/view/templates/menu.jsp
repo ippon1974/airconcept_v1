@@ -18,30 +18,31 @@
     </c:if>
 </ul>
 
+<c:if test="${uri.equals(grills)}">
 <ul class="nav">
-    <c:if test="${uri.equals(grills)}">
+
         <li><a href="/">Airconcept</a></li>
         <li>Шаблоны решеток</li>
         <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
-    </c:if>
 </ul>
+</c:if>
 
+<c:if test="${uri.equals(contact)}">
 <ul class="nav">
-    <c:if test="${uri.equals(contact)}">
         <li><a href="/">Airconcept</a></li>
         <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
         <li>Контакты</li>
-    </c:if>
 </ul>
+</c:if>
 
+<c:if test="${query != null}">
 <ul class="nav">
-    <c:if test="${query != null}">
+
         <li><a href="${pageContext.request.contextPath}/">Airconcept</a></li>
         <li><a style="color: red" href="${pageContext.request.contextPath}/catalog/grills"><strong>Шаблоны решеток</strong></a> </li>
         <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
-    </c:if>
 </ul>
-
+</c:if>
 
 
 

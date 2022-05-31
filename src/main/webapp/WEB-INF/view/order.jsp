@@ -12,7 +12,7 @@
 
 <body>
 
-<table align="center" border="0" cellpadding="2" cellspacing="2" width="70%">
+<table align="center" border="0" cellpadding="2" cellspacing="2" width="95%">
     <tr>
         <td colspan="6">
             <h1><a href="/cart">Корзина</a> → Оформление заказа</h1>
