@@ -37,7 +37,7 @@
     </div>
     <div class="item cart">
         <c:if test="${cartService != null}">
-            <div style="font-size: 0.9em" align="right"><a title="Корзина" style="color: red" href="/cart">Корзина</a> <strong>${count}</strong></div>
+            <div><a title="Корзина" href="/cart">Корзина</a> <strong>${count}</strong></div>
         </c:if>
     </div>
     <div class="item title">
@@ -140,7 +140,7 @@
         <div class="cart_add_result">
         <c:choose>
             <c:when test="${isStr}">
-                <h3>Этот товар добавлен в корзину</h3>
+                <h3>Товар добавлен в корзину</h3>
             </c:when>
             <c:when test="${totalNdc != null}">
                 <div>
@@ -158,13 +158,13 @@
         <c:if test="${totalNdc == null}">
             <dl>
                 <dt>Шаблон</dt>
-                <dd>Не выбран</dd>
+                <dd>${template}</dd>
                 <dt>Материал</dt>
                 <dd>Не выбран</dd>
                 <dt>Толщина</dt>
-                <dd>Не выбрана</dd>
+                <dd>Нет</dd>
                 <dt>Длина</dt>
-                <dd>Нет размера</dd>
+                <dd>Нет</dd>
                 <dt>Высота</dt>
                 <dd>Нет размера</dd>
             </dl>
@@ -224,7 +224,6 @@
         <script src="${pageContext.request.contextPath}/js/bufer.js"></script>
     </div>
 </div>
-
 
 </body>
 </html>

@@ -11,7 +11,12 @@ a {
 h1, h2, h3{
     font-weight: normal;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5em;
+}
+
+.mainpageheader{
+    font-size: 2em;
+    font-weight: bold;
+    color: gray;
 }
 
 .about {;
@@ -58,5 +63,5 @@ p.copyring{
 }
 
 .line {
-    border-bottom: 1px solid #f00; /* Параметры линии */
+    border-bottom: 1px solid gray; /* Параметры линии */
 }

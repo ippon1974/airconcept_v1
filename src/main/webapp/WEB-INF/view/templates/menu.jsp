@@ -13,24 +13,24 @@
 <ul class="nav">
     <c:if test="${uri.equals(index)}">
         <li>Airconcept</li>
-        <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
-        <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
+        <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
     </c:if>
 </ul>
 
 <c:if test="${uri.equals(grills)}">
 <ul class="nav">
 
-        <li><a href="/">Airconcept</a></li>
+        <li><a href="/" title="Главная">Airconcept</a></li>
         <li>Шаблоны решеток</li>
-        <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
+        <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
 </ul>
 </c:if>
 
 <c:if test="${uri.equals(contact)}">
 <ul class="nav">
-        <li><a href="/">Airconcept</a></li>
-        <li><a href="${pageContext.request.contextPath}/catalog/grills">Шаблоны решеток</a> </li>
+        <li><a href="/" title="Главная">Airconcept</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
         <li>Контакты</li>
 </ul>
 </c:if>
@@ -38,9 +38,9 @@
 <c:if test="${query != null}">
 <ul class="nav">
 
-        <li><a href="${pageContext.request.contextPath}/">Airconcept</a></li>
-        <li><a style="color: red" href="${pageContext.request.contextPath}/catalog/grills"><strong>Шаблоны решеток</strong></a> </li>
-        <li><a href="${pageContext.request.contextPath}/contact">Контакты</a></li>
+        <li><a href="${pageContext.request.contextPath}/" title="Главная">Airconcept</a></li>
+        <li><a style="color: red" href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток"><strong>Шаблоны решеток</strong></a> </li>
+        <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
 </ul>
 </c:if>
 

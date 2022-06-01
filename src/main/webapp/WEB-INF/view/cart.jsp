@@ -6,54 +6,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cart.css">
     <title>Корзина</title>
 </head>
 
 <body>
-
 <form action="/update" method="post">
-<table align="center" cellspacing="2" cellpadding="2" border="0" width="95%">
-    <tr>
-        <td colspan="7">
-            <h1>Корзина</h1>
-        </td>
-    </tr>
-    <c:set var="totalcart" value="${0}" />
+<div class="cart_order_head"><h1>Корзина</h1></div>
+<c:set var="totalcart" value="${0}" />
 <c:forEach var="listCatr" items="${listCatr}" varStatus="loop">
     <c:set var="totalcart" value="${totalcart + (listCatr.getTotalNDC() * listCatr.getNumber())}" />
-    <tr>
-        <td width="150px">
-            <c:if test="${listCatr.getTypematerial() == 1}">
-                <p><img src="/img/cart/copper/${listCatr.getImg()}.png"></p>
-            </c:if>
-            <c:if test="${listCatr.getTypematerial() == 2}">
-                <p><img src="/img/cart/brass/${listCatr.getImg()}.png"></p>
-            </c:if>
-            <c:if test="${listCatr.getTypematerial() == 3}">
-                <p><img src="/img/cart/steel/${listCatr.getImg()}.png"></p>
-            </c:if>
-        </td>
-        <td><a href="${pageContext.request.contextPath}/catalog/grills?template=${listCatr.getImg()}&materialid=${listCatr.getTypematerial()}&size=${listCatr.getSize()}&width=${listCatr.getWidth()}&height=${listCatr.getHeight()}">Вентиляционная решетка ${listCatr.getName()}</a></td>
-        <td>${listCatr.getNamematerial()}</td>
-        <td>${listCatr.getWidth()} мм &#215; ${listCatr.getHeight()} мм &#215; ${listCatr.getSize()} мм</td>
-        <td>${listCatr.getTotalNDC() * listCatr.getNumber()} руб.</td>
-        <td width=""><input type="number" min="1" name="number" size="2em" value="${listCatr.getNumber()}"></td>
-        <td><a href="/delete?id=${listCatr.getId()}">Удалить</a></td>
-    </tr>
-</c:forEach>
-    <tr>
-        <td colspan="7">
-            <hr>
-            <div align="left">
-                <p><a href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a>  <c:if test="${totalcart != 0}">| <a href="/order">Оформить заказ </a></c:if></p>
-            </div>
-            <c:if test="${totalcart != 0}">
-                <div align="right"><input type="submit" value="Обновить"></div>
-            </c:if>
-            <p align="right"><strong>Общая стоимость: ${totalcart} руб.</strong></p>
-        </td>
-    </tr>
-</table>
+<div class="container_loop">
+    <div class="item_2 img_2">
+        <c:if test="${listCatr.getTypematerial() == 1}">
+            <p><img src="/img/cart/copper/${listCatr.getImg()}.png"></p>
+        </c:if>
+        <c:if test="${listCatr.getTypematerial() == 2}">
+            <p><img src="/img/cart/brass/${listCatr.getImg()}.png"></p>
+        </c:if>
+        <c:if test="${listCatr.getTypematerial() == 3}">
+            <p><img src="/img/cart/steel/${listCatr.getImg()}.png"></p>
+        </c:if>
+    </div>
+    <div class="item_2 desc_2">
+        <a href="${pageContext.request.contextPath}/catalog/grills?template=${listCatr.getImg()}&materialid=${listCatr.getTypematerial()}&size=${listCatr.getSize()}&width=${listCatr.getWidth()}&height=${listCatr.getHeight()}">Вентиляционная решетка ${listCatr.getName()}</a>
 
+    </div>
+    <div class="item_2 type_2">
+            ${listCatr.getNamematerial()}
+    </div>
+    <div class="item_2 size_2">
+        ${listCatr.getWidth()} мм &#215; ${listCatr.getHeight()} мм &#215; ${listCatr.getSize()} мм
+    </div>
+    <div class="item_2 cost_2">
+            ${listCatr.getTotalNDC() * listCatr.getNumber()} руб.
+    </div>
+    <div class="item_2 count_2">
+        <input type="number" min="1" name="number" size="2em" value="${listCatr.getNumber()}">
+    </div>
+    <div class="item_2 delete_2">
+        <a href="/delete?id=${listCatr.getId()}">Удалить</a>
+    </div>
+</div>
+</c:forEach>
+
+    <div class="container_footer">
+    <div class="item_3 navfooter">
+    <p><a href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a>  <c:if test="${totalcart != 0}">| <a href="/order">Оформить заказ </a></c:if></p>
+    </div>
+    <div class="item_3 totalcart">
+        <p>Общая стоимость: ${totalcart} руб.</p>
+    <c:if test="${totalcart != 0}">
+        <input class="button" type="submit" value="Обновить">
+    </c:if>
+    </div>
+</div>
 </form>

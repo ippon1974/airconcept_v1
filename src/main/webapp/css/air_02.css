@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
 .nav{
     list-style-type: none;
     margin: 0;
@@ -31,9 +32,9 @@ h1, h2, h3{
 }
 
 .container{
-    margin: 0 20px;
+    margin: 0 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.8fr 1fr;
     grid-template-areas:
             'menu menu cart'
             'title title title'
@@ -46,7 +47,13 @@ h1, h2, h3{
 }
 .cart{
     grid-area: cart;
+    justify-self:start;
 }
+.cart div{
+    margin: 10px 0 0 0;
+    font-size: 0.8em;
+}
+
 .title{
     grid-area: title;
 }
@@ -153,8 +160,19 @@ fieldset legend{
     font-size: 0.8em;
 }
 
+@media (max-width: 810px) {
+    .container {
+        margin: 0;
+        grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
 @media (max-width: 601px) {
     .container {
+        margin: 0;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -191,7 +209,7 @@ fieldset legend{
 
 .responsive {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
 }
 
