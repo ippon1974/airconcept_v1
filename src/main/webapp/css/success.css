@@ -1,0 +1,47 @@
+.wrapp{
+    display: block;
+    margin: 20px 20px;
+}
+
+.wrapp h1{
+    font-size: 3.5em;
+    color: green;
+}
+
+.wrapp h2{
+    font-size: 2.5em;
+}
+
+.wrapp h2 a{
+    color: darkblue;
+}
+
+@media (max-width: 601px) {
+    .wrapp h1{
+        color: green;
+        font-size: 10vw;
+    }
+
+    .wrapp h2{
+        font-size: 7vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

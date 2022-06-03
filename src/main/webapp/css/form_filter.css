@@ -14,12 +14,12 @@
 }
 
 .custom-select {
-    padding: 5px;
+    padding: 10px;
     font-size: 1.3em;
     width: 90%;
 }
 .size_input{
-    padding: 5px;
+    padding: 10px;
     font-size: 1.3em;
     width: 90%;
 }
@@ -32,7 +32,7 @@
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 12px 35px;
+    padding: 15px 35px;
     text-align: center;
     text-decoration: none;
     /* display: inline-block; */
@@ -40,7 +40,7 @@
     border-radius: 5px; /* Уголки */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 601px) {
     .container{
         display: grid;
         margin: 0 5px;
@@ -50,11 +50,13 @@
         padding: 0 0 15px 0;
     }
     .custom-select {
-        font-size: 4vw;
+        font-size: 5vw;
         font-weight: bolder;
+        width: 95%;
     }
     .size_input{
-        font-size: 4vw;
+        font-size: 5vw;
         font-weight: bolder;
+        width: 90%;
     }
 }

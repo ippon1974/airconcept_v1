@@ -31,6 +31,7 @@ h1, h2, h3{
     font-family: 'Roboto', sans-serif;
 }
 
+
 .container{
     margin: 0 50px;
     display: grid;
@@ -47,11 +48,15 @@ h1, h2, h3{
 }
 .cart{
     grid-area: cart;
-    justify-self:start;
+    justify-self: start;
 }
 .cart div{
-    margin: 10px 0 0 0;
-    font-size: 0.8em;
+    margin: 0.8em 0 0 0;
+    font-size: 1.0em;
+}
+
+.cart div a{
+   color: red;
 }
 
 .title{
@@ -166,8 +171,15 @@ fieldset legend{
         grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
         grid-template-columns: 1fr;
     }
-}
+    .cart{
+        grid-area: cart;
+        justify-self: flex-end;
+    }
 
+    .cart div{
+        font-size: 2.5vw;
+    }
+}
 
 
 @media (max-width: 601px) {
@@ -184,6 +196,15 @@ fieldset legend{
         grid-template-columns: 1fr;
     }
 
+    .cart{
+        grid-area: cart;
+        justify-self: flex-end;
+    }
+
+    .cart div{
+        font-size: 3vw;
+    }
+
     .custom-select{
         font-size: 1.5em;
     }
@@ -191,12 +212,6 @@ fieldset legend{
     .custom-size{
         font-size: 1.5em;
     }
-
-    article > h1 {
-        font-size: 5vh;
-        text-transform: uppercase;
-    }
-
 }
 
 .pricetotal p{

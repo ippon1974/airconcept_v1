@@ -17,6 +17,7 @@
 
     <title>Вентиляционные решетки ${materialname}. Длина: ${width}мм. Высота: ${height}мм. Толщина листа: ${size}мм.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Произовдство вентиляционных решеток из стали, латуни, меди. ">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/form_filter.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">

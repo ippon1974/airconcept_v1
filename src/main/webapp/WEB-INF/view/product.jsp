@@ -8,21 +8,24 @@
     <c:choose>
         <c:when test="${width == null}">
             <title>Вентиляционная решетка ${template}</title>
+            <meta name="description" content="Решетка для вентиляции ${template}. ">
             <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
         </c:when>
 
         <c:when test="${width != null}">
+            <meta name="description" content="Решетка для ветиляции ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина: ${size}мм.">
             <title>Вентиляционная решетка ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</title>
         </c:when>
 
         <c:otherwise>
+            <meta name="description" content="Решетка для ветиляции ${template}.">
             <title>Вентиляционная решетка</title>
         </c:otherwise>
     </c:choose>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/air_02.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style1.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page1.css">
+<%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style1.css">--%>
+<%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page1.css">--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" type = "text/javascript"></script>
 </head>
@@ -40,6 +43,7 @@
             <div><a title="Корзина" href="/cart">Корзина</a> <strong>${count}</strong></div>
         </c:if>
     </div>
+
     <div class="item title">
 
         <c:choose>

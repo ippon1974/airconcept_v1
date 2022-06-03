@@ -54,7 +54,7 @@
 
     <div class="container_footer">
     <div class="item_3 navfooter">
-    <p><a href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a>  <c:if test="${totalcart != 0}">| <a href="/order">Оформить заказ </a></c:if></p>
+    <p><a href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a>  <c:if test="${totalcart != 0}">| <a class="checkout_order" href="/order">Оформить заказ</a></c:if></p>
     </div>
     <div class="item_3 totalcart">
         <p>Общая стоимость: ${totalcart} руб.</p>
