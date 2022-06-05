@@ -165,7 +165,7 @@ fieldset legend{
     font-size: 0.8em;
 }
 
-@media (max-width: 810px) {
+@media (max-width: 801px) {
     .container {
         margin: 0;
         grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
@@ -202,7 +202,8 @@ fieldset legend{
     }
 
     .cart div{
-        font-size: 3vw;
+        font-size: 3.0vw;
+        text-transform: uppercase;
     }
 
     .custom-select{
