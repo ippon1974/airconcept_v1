@@ -102,6 +102,7 @@
     display: inline-block;
     font-size: 15px;
     border-radius: 5px; /* Уголки */
+    cursor: pointer;
 }
 
 @media (max-width: 601px) {

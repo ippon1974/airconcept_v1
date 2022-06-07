@@ -28,6 +28,7 @@
     align-self: flex-end;
 }
 
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -35,9 +36,24 @@
     padding: 15px 35px;
     text-align: center;
     text-decoration: none;
-    /* display: inline-block; */
+    display: inline-block;
     font-size: 15px;
     border-radius: 5px; /* Уголки */
+    cursor: pointer;
+}
+
+
+.button_filter {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px; /* Уголки */
+    cursor: pointer;
 }
 
 @media (max-width: 601px) {
