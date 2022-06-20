@@ -1,1 +1,3 @@
-User-agent: *<br /> Disallow:
+# robots.txt for http://www.airconcept.ru
+
+User-agent: *
