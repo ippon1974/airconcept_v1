@@ -152,7 +152,7 @@
                     <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">
                         <input class="button" type="submit" value="В корзину">
                     </form>
-                </div>
+                </div><br>
             </c:when>
             <c:otherwise>
 
@@ -161,6 +161,7 @@
         </div>
 
         <c:if test="${totalNdc == null}">
+            <h2>Расчет стоимости</h2>
             <dl>
                 <dt>Шаблон</dt>
                 <dd>${template}</dd>
