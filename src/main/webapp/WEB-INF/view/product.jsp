@@ -114,10 +114,10 @@
                 <fieldset>
                     <legend>Длина</legend>
                     <c:if test="${totalNdc == null}">
-                        <input autofocus class="custom-size" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                        <input autocomplete="off" autofocus class="custom-size" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
                     </c:if>
                     <c:if test="${totalNdc != null}">
-                        <input class="custom-size" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
+                        <input autocomplete="off" class="custom-size" type="number" min="120" max="3000" value="${width}" name="width" id="width" required/>
                     </c:if>
                 </fieldset>
             </div>
