@@ -59,15 +59,15 @@
 <div class="container_order_form">
     <div class="order name">
         <label>Имя</label>
-        <input autofocus type="text" name="name" required="required">
+        <input autofocus type="text" name="name" pattern="[A-Za-zА-Яа-яЁё]{4,}" required="required">
     </div>
     <div class="order phone">
         <label style="display: block;">Телефон</label>
-        <input type="text" name="phone" required="required">
+        <input  type="tel" name="phone" pattern="(\+?\d[- .]*){7,13}" title="Международный, государственный или местный телефонный номер" required="required">
     </div>
     <div class="order mail">
         <label>Электронная почта</label>
-        <input type="email" name="email" required="required">
+        <input type="email" name="email" required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
     </div>
     <div class="order comment">
         <label>Комментарий к заказу</label>
