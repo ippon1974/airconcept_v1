@@ -59,7 +59,7 @@
 <div class="container_order_form">
     <div class="order name">
         <label>Имя</label>
-        <input autofocus type="text" name="name" pattern="[A-Za-zА-Яа-яЁё]{4,}" required="required">
+        <input autofocus type="text" name="name" pattern="[A-Za-zА-Яа-яЁё]{4,}" title="Латинские или русский буквы" required="required">
     </div>
     <div class="order phone">
         <label style="display: block;">Телефон</label>
