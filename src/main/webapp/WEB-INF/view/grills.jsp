@@ -81,7 +81,7 @@
             <figure>
                 <a href="/catalog/grills?template=${listGrills.gtransliterations}">
                     <img alt="Вентиляционная решетка ${listGrills.gname}" src="/img/showcase/blank/${listGrills.gtransliterations}.png"></a>
-                <figcaption>Шаблон: <a title="Вентиляционная решетка ${listGrills.gname}" href="/catalog/grills?template=${listGrills.gtransliterations}">${listGrills.gname}</a><br></figcaption>
+                <figcaption>Вентиляционная решетка<br/>Шаблон: <a title="Вентиляционная решетка ${listGrills.gname}" href="/catalog/grills?template=${listGrills.gtransliterations}">${listGrills.gname}</a><br></figcaption>
             </figure>
         </div>
     </c:forEach>

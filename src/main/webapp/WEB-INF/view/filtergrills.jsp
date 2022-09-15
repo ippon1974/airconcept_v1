@@ -126,7 +126,7 @@
                     <img alt="Вентиляционная решетка ${listFilterCalcs.gname}" src="/img/showcase/steel/${listFilterCalcs.gpathimg}.png">
                 </c:if>
             </a>
-            <figcaption>
+            <figcaption>Вентиляционная решетка<br/>
                 Шаблон: <a title="Вентиляционная решетка ${listFilterCalcs.gname}" href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">${listFilterCalcs.gname}</a><br>
                 <c:if test="${listFilterCalcs.materialid == 1}">
                     Латунь ${listFilterCalcs.size} мм.<br>
