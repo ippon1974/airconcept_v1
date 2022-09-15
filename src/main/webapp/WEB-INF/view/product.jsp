@@ -213,16 +213,16 @@
     </div>
     <div class="item img">
         <c:if test="${material == null}">
-            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/blank/${transliterations}.png"></p>
+            <p><img class="responsive" alt="Вентиляционная решетка: ${template}" src="${pageContext.request.contextPath}/img/blank/${transliterations}.png"></p>
         </c:if>
         <c:if test="${material == 1}">
-            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/copper/${transliterations}.png"></p>
+            <p><img class="responsive" alt="Вентиляционная решетка: ${template}" src="${pageContext.request.contextPath}/img/copper/${transliterations}.png"></p>
         </c:if>
         <c:if test="${material == 2}">
-            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/brass/${transliterations}.png"></p>
+            <p><img class="responsive" alt="Вентиляционная решетка: ${template}" src="${pageContext.request.contextPath}/img/brass/${transliterations}.png"></p>
         </c:if>
         <c:if test="${material == 3}">
-            <p><img class="responsive" alt="Шаблон: ${template}" src="${pageContext.request.contextPath}/img/steel/${transliterations}.png"></p>
+            <p><img class="responsive" alt="Вентиляционная решетка: ${template}" src="${pageContext.request.contextPath}/img/steel/${transliterations}.png"></p>
         </c:if>
     </div>
     <div class="item footer">

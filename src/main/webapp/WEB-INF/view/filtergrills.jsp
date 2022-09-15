@@ -117,17 +117,17 @@
         <figure>
             <a href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">
                 <c:if test="${listFilterCalcs.materialid == 1}">
-                    <img alt="Шаблон решетки ${listFilterCalcs.gname}" src="/img/showcase/copper/${listFilterCalcs.gpathimg}.png">
+                    <img alt="Вентиляционная решетка ${listFilterCalcs.gname}" src="/img/showcase/copper/${listFilterCalcs.gpathimg}.png">
                 </c:if>
                 <c:if test="${listFilterCalcs.materialid == 2}">
-                    <img alt="Шаблон решетки ${listFilterCalcs.gname}" src="/img/showcase/brass/${listFilterCalcs.gpathimg}.png">
+                    <img alt="Вентиляционная решетка ${listFilterCalcs.gname}" src="/img/showcase/brass/${listFilterCalcs.gpathimg}.png">
                 </c:if>
                 <c:if test="${listFilterCalcs.materialid == 3}">
-                    <img alt="Шаблон решетки ${listFilterCalcs.gname}" src="/img/showcase/steel/${listFilterCalcs.gpathimg}.png">
+                    <img alt="Вентиляционная решетка ${listFilterCalcs.gname}" src="/img/showcase/steel/${listFilterCalcs.gpathimg}.png">
                 </c:if>
             </a>
             <figcaption>
-                Шаблон: <a title="Шаблон решетки ${listFilterCalcs.gname}" href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">${listFilterCalcs.gname}</a><br>
+                Шаблон: <a title="Вентиляционная решетка ${listFilterCalcs.gname}" href="${pageContext.request.contextPath}/catalog/grills?template=${listFilterCalcs.gtransliterations}&materialid=${listFilterCalcs.materialid}&size=${listFilterCalcs.size}&width=${listFilterCalcs.gw}&height=${listFilterCalcs.gh}">${listFilterCalcs.gname}</a><br>
                 <c:if test="${listFilterCalcs.materialid == 1}">
                     Латунь ${listFilterCalcs.size} мм.<br>
                 </c:if>
