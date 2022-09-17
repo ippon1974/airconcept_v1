@@ -26,7 +26,9 @@
     <div style="clear: left"></div>
 </div>
 
-<h1 class="mainpageheader">Производство <a href="${pageContext.request.contextPath}/catalog/grills">вентиляционных решеток</a> из латуни, меди, нержавеющей стали</h1>
+<h1 class="mainpageheader">Производство <a href="${pageContext.request.contextPath}/catalog/grills">вентиляционных решеток</a> из
+    <a href="/filtergrills?materialid=1&size=1&width=300&height=300">латуни</a>,
+    <a href="/filtergrills?materialid=2&size=1&width=300&height=300">меди</a>, <a href="/filtergrills?materialid=3&size=1&width=300&height=300">нержавеющей стали</a></h1>
 
 <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
 
