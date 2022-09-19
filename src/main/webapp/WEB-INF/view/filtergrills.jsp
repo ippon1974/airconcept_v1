@@ -50,8 +50,8 @@
 
 <div style="margin-left: 40px">
     <h1>${materialname}.
-        Длина: ${width}мм. Высота: ${height}мм.
-        Толщина листа: ${size}мм.</h1>
+        Длина: ${width} мм. Высота: ${height} мм.
+        Толщина листа: ${size} мм.</h1>
 </div>
 
 

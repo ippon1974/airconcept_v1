@@ -14,8 +14,8 @@
         </c:when>
 
         <c:when test="${width != null}">
-            <meta name="description" content="Решетка для ветиляции ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина: ${size}мм.">
-            <title>Вентиляционная решетка ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</title>
+            <meta name="description" content="Решетка для ветиляции ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width} мм. Высота: ${height} мм. Толщина: ${size} мм.">
+            <title>Вентиляционная решетка ${template}. Материал: ${modelCalc.getMname()}. Длина: ${width} мм. Высота: ${height} мм. Толщина материала: ${size} мм.</title>
         </c:when>
 
         <c:otherwise>
@@ -53,7 +53,7 @@
             </c:when>
 
             <c:when test="${width != null}">
-                <h1>Вентиляционная решетка &#171;${template}&#187;. Материал: ${modelCalc.getMname()}. Длина: ${width}мм. Высота: ${height}мм. Толщина материала: ${size}мм.</h1>
+                <h1>Вентиляционная решетка &#171;${template}&#187;. Материал: ${modelCalc.getMname()}. Длина: ${width} мм. Высота: ${height} мм. Толщина материала: ${size} мм.</h1>
             </c:when>
 
             <c:otherwise>
