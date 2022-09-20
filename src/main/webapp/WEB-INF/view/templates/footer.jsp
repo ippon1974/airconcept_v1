@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <hr>
-&copy; Airconcept 2022 Вентиляционные решетки
+&copy; Airconcept 2022 Производство вентиляционных решеток
 <p style="font-size: 0.7em;color: #1b42ff;"><a target="_blank" href="${pageContext.request.contextPath}/policy">Политика конфиденциальности</a> | <a target="_blank" href="${pageContext.request.contextPath}/privacy">Пользовательское соглашение</a></p>
 
 <!-- Yandex.Metrika counter -->
