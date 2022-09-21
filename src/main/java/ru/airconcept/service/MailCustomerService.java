@@ -52,7 +52,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "fromHome");
+                return new PasswordAuthentication("post2074@gmail.com", "fromOffice");
             }
 
         });
@@ -141,7 +141,7 @@ public class MailCustomerService {
             listBuilder.append("<div class = footer>«Airconcept» Производство декоративных ветниляциооных решеток")
             .append(" 140080 ул. Карла Маркса д. 117, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»")
             .append(" Контактный телефон: +7 (925) 585-33-71 (Мегафон) В рабочие время 9:00 до 19:00 Суббота и воскресенье выходные дни")
-            .append(" Электронная почта: box@wcut.ru")
+            .append(" Электронная почта: box@airconcept.ru")
             .append(" Веб сайт: http://www.airconcept.ru/")
             .append("</div>");
             message.setContent(listBuilder.toString(), "text/html; charset=UTF-8");
@@ -171,7 +171,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "home");
+                return new PasswordAuthentication("post2074@gmail.com", "fromOffice");
             }
 
         });
@@ -187,7 +187,7 @@ public class MailCustomerService {
             message.setFrom(new InternetAddress(from));
 
             // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress("box@wcut.ru"));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress("order@airconcept.ru"));
 
             // Set Subject: header field
             message.setSubject("Запрос с сайта: Airconcept.ru");
