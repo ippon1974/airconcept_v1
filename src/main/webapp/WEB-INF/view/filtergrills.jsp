@@ -49,9 +49,38 @@
 </c:if>
 
 <div style="margin-left: 40px">
-    <h1>${materialname}.
+    <h1>Вентиляционные решетки. ${materialname}.
         Длина: ${width} мм. Высота: ${height} мм.
         Толщина листа: ${size} мм.</h1>
+
+    <p>
+        <c:choose>
+            <c:when test="${material == 1}">
+                <strong>Латунь</strong> |
+            </c:when>
+            <c:otherwise>
+                <a title="Вентиляционные решетки из латуни" href="${pageContext.request.contextPath}/filtergrills?materialid=1&size=3&width=150&height=150">Латунь</a> |
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${material == 2}">
+                <strong>Медь</strong> |
+            </c:when>
+            <c:otherwise>
+                <a title="Вентиляционные решетки из меди" href="${pageContext.request.contextPath}/filtergrills?materialid=2&size=3&width=150&height=150">Медь</a> |
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${material == 3}">
+                <strong>Сталь</strong>
+            </c:when>
+            <c:otherwise>
+                <a title="Вентиляционные решетки из нержавеющей стали" href="${pageContext.request.contextPath}/filtergrills?materialid=3&size=3&width=150&height=150">Сталь</a>
+            </c:otherwise>
+        </c:choose>
+    </p>
+
+
 </div>
 
 

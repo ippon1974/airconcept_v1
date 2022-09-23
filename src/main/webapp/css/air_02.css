@@ -100,6 +100,19 @@ fieldset legend{
     padding: 10px;
 }
 
+.add_card {
+    background-color: coral; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px; /* Уголки */
+    cursor: pointer;
+}
+
 
 .button {
     background-color: #4CAF50; /* Green */

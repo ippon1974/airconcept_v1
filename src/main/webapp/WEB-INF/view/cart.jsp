@@ -10,10 +10,20 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cart.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <title>Корзина</title>
 </head>
 
 <body>
+
+<div style="padding: 0.5em 0 0 50px">
+    <ul class="nav">
+        <li><a href="/" title="Главная">Airconcept</a></li>
+        <li><a href="/catalog/grills">Шаблоны решеток</a></li>
+        <li><a href="/contact" title="Контакты">Контакты</a></li>
+    </ul>
+</div>
+
 <form action="/update" method="post">
 <div class="cart_order_head"><h1>Корзина</h1></div>
 <c:set var="totalcart" value="${0}" />

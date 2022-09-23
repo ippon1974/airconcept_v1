@@ -10,12 +10,21 @@
 <%--    <link rel="stylesheet" type="text/css" href="/css/reset.css">--%>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/order.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
 
     <title>Оформление заказа</title>
 
 </head>
 
 <body>
+
+<div style="padding: 0 0 0 40px">
+    <ul class="nav">
+        <li><a href="/" title="Главная">Airconcept</a></li>
+        <li><a href="/catalog/grills">Шаблоны решеток</a></li>
+        <li><a href="/contact" title="Контакты">Контакты</a></li>
+    </ul>
+</div>
 
 <div class="order order_head"><h1><a href="/cart">Корзина</a> → Оформление заказа</h1></div>
 <c:set var="totalcart" value="${0}" />

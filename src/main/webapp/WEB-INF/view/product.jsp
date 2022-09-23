@@ -150,7 +150,7 @@
             <c:when test="${totalNdc != null}">
                 <div>
                     <form action="${pageContext.request.contextPath}/cart" name="cart" method="post">
-                        <input class="button" type="submit" value="В корзину">
+                        <input class="add_card" type="submit" value="В корзину">
                     </form>
                 </div><br>
             </c:when>
