@@ -10,8 +10,9 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/icons/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
-    <meta name="description" content="Производство вентиляционных решеток различного дизайна из латуни, меди, нержавеющей стали." />
-    <title>Декоративные вентиляционные решетки из латуни, меди,нержавеющей стали.</title>
+    <meta name="keywords" content="Вентиляционная решетка под заказ,решетка зи латуни, решетка из меди, решетка из стали, решетка из камня">
+    <meta name="description" content="Производство вентиляционных решеток различного дизайна из латуни, меди, нержавеющей стали, природного и искусственного камня" />
+    <title>Производство вентиляционных решеток различного дизайна из латуни, меди, нержавеющей стали.</title>
 </head>
 
 <body>
