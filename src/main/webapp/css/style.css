@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    background: white;
+    background: black;
+    color: gainsboro;
 }
 
 a {
-    color: darkblue;
+    color: cornflowerblue;
 }
 
 h1, h2, h3{
@@ -16,7 +17,7 @@ h1, h2, h3{
 .mainpageheader{
     font-size: 3em;
     font-weight: bold;
-    color: black;
+    /*color: black;*/
 }
 
 .about {;
@@ -47,8 +48,10 @@ p.copyring{
     padding: 0 0 0 2em;
 }
 
-.pricetotal{
-    /*background: antiquewhite;*/
+.pricetotal p{
+    background:black;
+    text-transform: uppercase;
+    color: yellow;
 }
 
 .pricetotal h3{

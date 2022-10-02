@@ -39,7 +39,7 @@
 <ul class="nav">
 
         <li><a href="${pageContext.request.contextPath}/" title="Главная">Airconcept</a></li>
-        <li><a style="color: red" href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток"><strong>Шаблоны решеток</strong></a> </li>
+        <li><a style="color: #ffff00;" href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток"><strong>Шаблоны решеток</strong></a> </li>
         <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
 </ul>
 </c:if>

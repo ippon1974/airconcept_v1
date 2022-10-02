@@ -11,6 +11,7 @@
             <title>Вентиляционная решетка ${template}</title>
             <meta name="description" content="Решетка для вентиляции ${template}. ">
             <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+            <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
         </c:when>
 
         <c:when test="${width != null}">
@@ -28,6 +29,7 @@
 <%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style1.css">--%>
 <%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page1.css">--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" type = "text/javascript"></script>
 </head>
 
