@@ -52,7 +52,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "home");
+                return new PasswordAuthentication("post2074@gmail.com", "office");
             }
 
         });
@@ -171,7 +171,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "home");
+                return new PasswordAuthentication("post2074@gmail.com", "office");
             }
 
         });
