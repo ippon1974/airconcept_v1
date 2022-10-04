@@ -18,9 +18,9 @@
 
 <div style="padding: 0.5em 0 0 50px">
     <ul class="nav">
-        <li><a href="/" title="Главная">Airconcept</a></li>
-        <li><a href="/catalog/grills">Шаблоны решеток</a></li>
-        <li><a href="/contact" title="Контакты">Контакты</a></li>
+        <li><a title="Airconcept" href="/" title="Главная">Airconcept</a></li>
+        <li><a title="Шаблоны решеток" href="/catalog/grills">Шаблоны решеток</a></li>
+        <li><a title="Контакты" href="/contact" title="Контакты">Контакты</a></li>
     </ul>
 </div>
 
@@ -65,7 +65,7 @@
     <div class="line"></div>
     <div class="container_footer">
     <div class="item_3 navfooter">
-    <p><a href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a>  <c:if test="${totalcart != 0}">| <a class="checkout_order" href="/order">Оформить заказ</a></c:if></p>
+    <p><a title="Продолжить покупки" href="${pageContext.request.contextPath}/catalog/grills">Продолжить покупки</a>  <c:if test="${totalcart != 0}">| <a title="Оформить заказ" class="checkout_order" href="/order">Оформить заказ</a></c:if></p>
     </div>
     <div class="item_3 totalcart">
         <p>Общая стоимость: ${totalcart} руб.</p>

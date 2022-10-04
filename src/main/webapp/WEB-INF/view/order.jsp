@@ -20,9 +20,9 @@
 
 <div style="padding: 0 0 0 40px">
     <ul class="nav">
-        <li><a href="/" title="Главная">Airconcept</a></li>
-        <li><a href="/catalog/grills">Шаблоны решеток</a></li>
-        <li><a href="/contact" title="Контакты">Контакты</a></li>
+        <li><a title="Главная" href="/">Airconcept</a></li>
+        <li><a title="Шаблоны решеток" href="/catalog/grills">Шаблоны решеток</a></li>
+        <li><a title="Контакты" href="/contact">Контакты</a></li>
     </ul>
 </div>
 
