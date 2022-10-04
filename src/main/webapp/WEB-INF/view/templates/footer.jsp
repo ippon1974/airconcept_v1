@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <hr>
-&copy; Airconcept 2022 Производство вентиляционных решеток
+<jsp:useBean id="now" class="java.util.Date" scope="request" />
+&copy <fmt:formatDate value="${now}" pattern="yyyy" /> Airconcept | Производство вентиляционных решеток | 140080 ул. Карла Маркса д. 117 Б, офис № 503 Люберецкий р-н, пос. Красково, МО.
 <p style="font-size: 0.7em;color: #1b42ff;"><a target="_blank" href="${pageContext.request.contextPath}/policy">Политика конфиденциальности</a> | <a target="_blank" href="${pageContext.request.contextPath}/privacy">Пользовательское соглашение</a></p>
 
 <!-- Yandex.Metrika counter -->
