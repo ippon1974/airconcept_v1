@@ -173,6 +173,8 @@
     </div>
 </c:forEach>
 </div>
-<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+<div style="padding: 0 30px 0 30px">
+    <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+</div>
 </body>
 </html>

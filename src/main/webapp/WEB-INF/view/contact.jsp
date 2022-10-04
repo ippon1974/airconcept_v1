@@ -12,7 +12,12 @@
     <title>Контакты</title>
 </head>
 <body>
+
+<div style="padding: 0 0 0 30px">
 <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
+</div>
+
+<div style="margin-left: 40px">
 <h1>Контакты</h1>
 <div style="">
     <div style="float: left; width: 80%; text-align: right">
@@ -37,7 +42,11 @@
 <div class="map">
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af6a25cbccd3d03fdf25afbd6fa0ae8a71873847b1239154e647b92b4d4c73cb9&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
 </div>
+</div>
 
-<jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+<div style="padding: 0 30px 0 30px">
+    <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+</div>
+
 </body>
 </html>

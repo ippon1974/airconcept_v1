@@ -92,6 +92,10 @@
         </div>
     </c:forEach>
 </div>
+
+<div style="padding: 0 30px 0 30px">
 <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
+</div>
+
 </body>
 </html>

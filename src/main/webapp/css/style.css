@@ -16,7 +16,7 @@ h1, h2, h3{
 }
 
 .mainpageheader{
-    font-size: 3em;
+    font-size: 2.7em;
     font-weight: bold;
     /*color: black;*/
 }
@@ -63,7 +63,7 @@ p.copyring{
 }
 
 .map{
-    padding: 20px;
+    padding: 0 0 10px 0px;
 }
 
 .line {
