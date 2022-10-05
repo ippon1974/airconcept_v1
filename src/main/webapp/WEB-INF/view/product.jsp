@@ -51,7 +51,7 @@
 
         <c:choose>
             <c:when test="${width == null}">
-                <h1 class="headerProduct">Вентиляционная решетка &#171;${template}&#187;</h1>
+                <h1 class="productInfoHead">Вентиляционная решетка &#171;${template}&#187;</h1>
             </c:when>
 
             <c:when test="${width != null}">
