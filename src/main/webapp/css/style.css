@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(//db.onlinewebfonts.com/c/429d980b8384fbd50ca346e3a8a0e6e5?family=Susan+Classic);
 
 body {
     background: black;
@@ -10,10 +11,10 @@ a {
     color: cornflowerblue;
 }
 
-h1, h2, h3{
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;
-}
+/*h1, h2, h3{*/
+/*    font-weight: normal;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 .mainpageheader{
     font-size: 2.7em;
@@ -31,11 +32,197 @@ h1, h2, h3{
     padding: 0 0 2em 0;
 }
 
-h1.header{
+.header{
     padding: 0 0 0 1em;
     text-transform: uppercase;
     font-weight: normal;
 }
+
+h1.productInfoHead{
+    font-family: "Susan Classic",  sans-serif;;
+    font-size: 3.2em;
+    font-weight: bold;
+}
+
+h2.subheaderProduct{
+    padding: 0.5em 0 0 0;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+@media (max-width: 801px) {
+    .container {
+        margin: 0;
+        grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
+        grid-template-columns: 1fr;
+    }
+
+    .mainpageheader {
+        font-size: 2.4em;
+    }
+
+    h1.productInfoHead{
+        font-size: 2.5em;
+    }
+
+    h2.subheaderProduct{
+        font-size: 1.2em;
+    }
+
+    .cart{
+        grid-area: cart;
+        justify-self: flex-end;
+    }
+
+    .cart div{
+        font-size: 2.5vw;
+    }
+}
+
+
+@media (max-width: 601px) {
+    .container {
+        margin: 0;
+        grid-template-areas:
+                'menu'
+                'cart'
+                'title'
+                'sideform'
+                'result'
+                'img'
+                'footer';
+        grid-template-columns: 1fr;
+    }
+
+    h1.productInfoHead{
+        font-size: 2.1em;
+    }
+
+    h2.subheaderProduct{
+        font-size: 1.0em;
+    }
+
+    h1.productInfoHead{
+        font-size: 2.1em;
+    }
+
+    .cart{
+        grid-area: cart;
+        justify-self: flex-end;
+    }
+
+    .cart div{
+        font-size: 3.0vw;
+        text-transform: uppercase;
+    }
+
+    .custom-select{
+        font-size: 1.5em;
+    }
+
+    .custom-size{
+        font-size: 1.5em;
+    }
+
+}
+
+@media (max-width: 481px) {
+    .container {
+        margin: 0;
+        grid-template-areas:
+                'menu'
+                'cart'
+                'title'
+                'sideform'
+                'result'
+                'img'
+                'footer';
+        grid-template-columns: 1fr;
+    }
+
+    h1.productInfoHead{
+        font-size: 1.6em;
+    }
+
+    h2.subheaderProduct{
+        font-size: 0.8em;
+    }
+
+    h1.productInfoHead{
+        font-size: 2.1em;
+    }
+
+    .cart{
+        grid-area: cart;
+        justify-self: flex-end;
+    }
+
+    .cart div{
+        font-size: 3.0vw;
+        text-transform: uppercase;
+    }
+
+    .custom-select{
+        font-size: 1.5em;
+    }
+
+    .custom-size{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 321px) {
+    .container {
+        margin: 0;
+        grid-template-areas:
+                'menu'
+                'cart'
+                'title'
+                'sideform'
+                'result'
+                'img'
+                'footer';
+        grid-template-columns: 1fr;
+    }
+
+    h1.mainpageheader {
+        font-size: 2.0em;
+    }
+
+    h1.productInfoHead{
+        font-size: 1.4em;
+    }
+
+    h2.subheaderProduct{
+        font-size: 0.9em;
+    }
+
+    h1.productInfoHead{
+        font-size: 2.1em;
+    }
+
+    .cart{
+        grid-area: cart;
+        justify-self: flex-end;
+    }
+
+    .cart div{
+        font-size: 3.0vw;
+        text-transform: uppercase;
+    }
+
+    .custom-select{
+        font-size: 1.5em;
+    }
+
+    .custom-size{
+        font-size: 1.5em;
+    }
+}
+
+
+
+
 
 p.menu{
     padding: 0 0 0 2em;

@@ -51,11 +51,12 @@
 
         <c:choose>
             <c:when test="${width == null}">
-                <h1>Вентиляционная решетка &#171;${template}&#187;</h1>
+                <h1 class="headerProduct">Вентиляционная решетка &#171;${template}&#187;</h1>
             </c:when>
 
             <c:when test="${width != null}">
-                <h1>Вентиляционная решетка &#171;${template}&#187;. Материал: ${modelCalc.getMname()}. Длина: ${width} мм. Высота: ${height} мм. Толщина материала: ${size} мм.</h1>
+                <h1 class="productInfoHead">Вентиляционная решетка &#171;${template}&#187;</h1>
+                <h2 class="subheaderProduct">Материал: ${modelCalc.getMname()}. Длина: ${width} мм. Высота: ${height} мм. Толщина материала: ${size} мм.</h2>
             </c:when>
 
             <c:otherwise>

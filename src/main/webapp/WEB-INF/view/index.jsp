@@ -32,8 +32,8 @@
 
 <div style="padding: 0 30px 0 30px;">
 <h1 class="mainpageheader">Производство <a href="${pageContext.request.contextPath}/catalog/grills">вентиляционных решеток</a> из
-    <a href="/filtergrills?materialid=1&size=1&width=300&height=300">латуни</a>,
-    <a href="/filtergrills?materialid=2&size=1&width=300&height=300">меди</a>, <a href="/filtergrills?materialid=3&size=1&width=300&height=300">нержавеющей стали</a></h1>
+    <a href="${pageContext.request.contextPath}/filtergrills?materialid=1&size=1&width=300&height=300">латуни</a>,
+    <a href="${pageContext.request.contextPath}/filtergrills?materialid=2&size=1&width=300&height=300">меди</a>, <a href="/filtergrills?materialid=3&size=1&width=300&height=300">нержавеющей стали</a></h1>
 </div>
 
 <div style="padding: 0 30px 0 30px">

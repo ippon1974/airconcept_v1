@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
 .nav{
     list-style-type: none;
     margin: 0;
@@ -26,10 +25,10 @@
     padding: 20px;
 }
 
-h1, h2, h3{
-    font-weight: normal;
-    font-family: 'Roboto', sans-serif;
-}
+/*h1, h2, h3{*/
+/*    font-weight: normal;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*}*/
 
 
 .container{
@@ -179,56 +178,6 @@ fieldset legend{
     font-size: 0.9em;
 }
 
-@media (max-width: 801px) {
-    .container {
-        margin: 0;
-        grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
-        grid-template-columns: 1fr;
-    }
-    .cart{
-        grid-area: cart;
-        justify-self: flex-end;
-    }
-
-    .cart div{
-        font-size: 2.5vw;
-    }
-}
-
-
-@media (max-width: 601px) {
-    .container {
-        margin: 0;
-        grid-template-areas:
-                'menu'
-                'cart'
-                'title'
-                'sideform'
-                'result'
-                'img'
-                'footer';
-        grid-template-columns: 1fr;
-    }
-
-    .cart{
-        grid-area: cart;
-        justify-self: flex-end;
-    }
-
-    .cart div{
-        font-size: 3.0vw;
-        text-transform: uppercase;
-    }
-
-    .custom-select{
-        font-size: 1.5em;
-    }
-
-    .custom-size{
-        font-size: 1.5em;
-    }
-}
-
 .pricetotal p{
     display: inline-block;
     padding: 10px;
@@ -242,6 +191,7 @@ fieldset legend{
     max-width: 350px;
     height: auto;
 }
+
 
 
 
