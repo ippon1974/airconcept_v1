@@ -8,13 +8,15 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/icons/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/gamburger.css">
     <meta name="description" content="Контакты. Компания AirConcept. Производство вентиляционных решеток в Москве" />
     <title>Контакты</title>
 </head>
 <body>
 
 <div style="padding: 0 0 0 30px">
-<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
+    <jsp:include page="/WEB-INF/view/templates/menu_gamburger.jsp" />
+    <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
 </div>
 
 <div style="margin-left: 40px">

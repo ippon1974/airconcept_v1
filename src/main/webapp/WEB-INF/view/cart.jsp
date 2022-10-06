@@ -9,6 +9,7 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/icons/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/gamburger.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cart.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <title>Корзина</title>
@@ -17,6 +18,7 @@
 <body>
 
 <div style="padding: 0.5em 0 0 50px">
+    <jsp:include page="/WEB-INF/view/templates/menu_gamburger.jsp" />
     <ul class="nav">
         <li><a title="Airconcept" href="/" title="Главная">Airconcept</a></li>
         <li><a title="Шаблоны решеток" href="/catalog/grills">Шаблоны решеток</a></li>

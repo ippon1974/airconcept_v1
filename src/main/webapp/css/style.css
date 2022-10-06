@@ -77,8 +77,12 @@ h2.subheaderProduct{
     .cart div{
         font-size: 2.5vw;
     }
-}
 
+    /*.responsive {*/
+    /*    transform: rotate(90deg);*/
+    /*    position:relative; top: -150px; left: 150px;*/
+    /*}*/
+}
 
 @media (max-width: 601px) {
     .container {
@@ -113,7 +117,6 @@ h2.subheaderProduct{
 
     .cart div{
         font-size: 3.0vw;
-        text-transform: uppercase;
     }
 
     .custom-select{
@@ -123,6 +126,11 @@ h2.subheaderProduct{
     .custom-size{
         font-size: 1.5em;
     }
+
+    /*.responsive {*/
+    /*    transform: rotate(180deg);*/
+    /*    position:relative; top: -150px; left: 150px;*/
+    /*}*/
 
 }
 
@@ -159,7 +167,6 @@ h2.subheaderProduct{
 
     .cart div{
         font-size: 3.0vw;
-        text-transform: uppercase;
     }
 
     .custom-select{
@@ -208,7 +215,6 @@ h2.subheaderProduct{
 
     .cart div{
         font-size: 3.0vw;
-        text-transform: uppercase;
     }
 
     .custom-select{
@@ -219,9 +225,6 @@ h2.subheaderProduct{
         font-size: 1.5em;
     }
 }
-
-
-
 
 
 p.menu{

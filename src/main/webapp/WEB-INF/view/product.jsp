@@ -30,6 +30,7 @@
 <%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/page1.css">--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/gamburger.css">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" type = "text/javascript"></script>
 </head>
 
@@ -38,9 +39,11 @@
 <div class="container">
     <div class="item menu">
         <div>
+            <jsp:include page="/WEB-INF/view/templates/menu_gamburger.jsp" />
             <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
         </div>
     </div>
+
     <div class="item cart">
         <c:if test="${cartService != null}">
             <div><a title="Корзина" href="/cart">Корзина</a> <strong>${count}</strong></div>
@@ -48,7 +51,6 @@
     </div>
 
     <div class="item title">
-
         <c:choose>
             <c:when test="${width == null}">
                 <h1 class="productInfoHead">Вентиляционная решетка &#171;${template}&#187;</h1>
@@ -66,7 +68,6 @@
     </div>
     <div class="item sideform">
         <form method="get" id="search">
-
             <div>
                 <fieldset>
                     <legend>Шаблон</legend>

@@ -10,6 +10,7 @@
 <%--    <link rel="stylesheet" type="text/css" href="/css/reset.css">--%>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/order.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/gamburger.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
 
     <title>Оформление заказа</title>
@@ -19,6 +20,7 @@
 <body>
 
 <div style="padding: 0 0 0 40px">
+    <jsp:include page="/WEB-INF/view/templates/menu_gamburger.jsp" />
     <ul class="nav">
         <li><a title="Главная" href="/">Airconcept</a></li>
         <li><a title="Шаблоны решеток" href="/catalog/grills">Шаблоны решеток</a></li>

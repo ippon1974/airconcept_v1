@@ -20,9 +20,8 @@
     /*color: darkblue;*/
 }
 
-
 .item{
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 /*h1, h2, h3{*/
@@ -70,6 +69,7 @@
 .img{
     grid-area: img;
 }
+
 .footer{
     grid-area: footer;
 }
@@ -191,6 +191,8 @@ fieldset legend{
     max-width: 350px;
     height: auto;
 }
+
+
 
 
 

@@ -8,20 +8,22 @@
     <title>Шаблоны вентиляционных решеток</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="${pageContext.request.contextPath}/img/icons/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/form_filter.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/gamburger.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/form_filter.css">
 </head>
 <body>
 
 <div style="padding: 0 0 0 30px">
-<jsp:include page="/WEB-INF/view/templates/menu.jsp" />
+    <jsp:include page="/WEB-INF/view/templates/menu_gamburger.jsp" />
+    <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
 </div>
 
 <div style="">
     <div style="float: left; width: 80%; text-align: right">
                 <c:if test="${cartService != null}">
-                    <div style="font-size: 0.7em; text-transform: uppercase" align="right"><a title="Корзина" style="color: yellow" href="/cart">Корзина</a> <strong>${count}</strong></div>
+                    <div style="font-size: 0.7em;" align="right"><a title="Корзина" style="color: yellow" href="/cart">Корзина</a> <strong>${count}</strong></div>
                 </c:if>
     </div>
     <div style="clear: left"></div>

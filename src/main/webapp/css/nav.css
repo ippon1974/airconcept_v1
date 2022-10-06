@@ -17,3 +17,9 @@
 .nav li a {
     /*color: darkblue;*/
 }
+
+@media (max-width: 801px) {
+    .nav{
+        display: none;
+    }
+}
