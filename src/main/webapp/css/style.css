@@ -52,7 +52,7 @@ h2.subheaderProduct{
 
 @media (max-width: 801px) {
     .container {
-        margin: 0;
+        margin: 0 5px 0 5px;
         grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
         grid-template-columns: 1fr;
     }
@@ -86,7 +86,7 @@ h2.subheaderProduct{
 
 @media (max-width: 601px) {
     .container {
-        margin: 0;
+        margin: 0 5px 0 5px;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -136,7 +136,7 @@ h2.subheaderProduct{
 
 @media (max-width: 481px) {
     .container {
-        margin: 0;
+        margin: 0 5px 0 5px;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -180,7 +180,7 @@ h2.subheaderProduct{
 
 @media (max-width: 321px) {
     .container {
-        margin: 0;
+        margin: 0 2px 0 2px;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -205,7 +205,7 @@ h2.subheaderProduct{
     }
 
     h1.productInfoHead{
-        font-size: 2.1em;
+        font-size: 1.5em;
     }
 
     .cart{
@@ -253,9 +253,33 @@ p.copyring{
 }
 
 .map{
-    padding: 0 0 10px 0px;
+    padding: 0;
 }
 
 .line {
     border-bottom: 1px solid gray; /* Параметры линии */
+}
+
+.note{
+    padding: 10px;
+    border: 1px solid #333333;
+}
+.note > p {
+    font-size: 0.8em;
+    line-height: 1.2em;
+    color: #CFD8DC;
+}
+
+.note > p.war{
+    color: yellow;
+    text-transform: uppercase;
+}
+
+.note > p.owndesign{
+    color: #4CAF50;
+    margin: 1em 0 0 0;
+}
+
+.note > p.owndesign > span.desmail{
+    color: cornflowerblue;
 }
