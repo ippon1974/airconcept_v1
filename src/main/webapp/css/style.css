@@ -50,9 +50,43 @@ h2.subheaderProduct{
     font-size: 1.5em;
 }
 
+h1.listProduct{
+    margin: 0.5em 0 0 0;
+    padding: 0;
+    font-family: "Susan Classic",  sans-serif;;
+    font-size: 3.2em;
+    font-weight: bold;
+}
+h2.listSubProduct{
+    margin: 0 0 1.5em 0;
+    padding:0;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+h1.listProductFilter{
+    margin: 0.5em 0 0 0;
+    padding: 0;
+    font-family: "Susan Classic",  sans-serif;;
+    font-size: 3.2em;
+    font-weight: bold;
+}
+h2.listSubProductFilter{
+    margin: 0 0 1.5em 0;
+    padding:0;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+input[type='number'] {
+    /*-moz-appearance: textfield;*/
+    width: 96%;
+}
+
 @media (max-width: 801px) {
     .container {
-        margin: 0 5px 0 5px;
+        margin: 0;
+        padding: 0 10px 0 10px;
         grid-template-areas: 'menu' 'cart' 'title' 'sideform' 'result' 'img' 'footer';
         grid-template-columns: 1fr;
     }
@@ -78,15 +112,15 @@ h2.subheaderProduct{
         font-size: 2.5vw;
     }
 
-    /*.responsive {*/
-    /*    transform: rotate(90deg);*/
-    /*    position:relative; top: -150px; left: 150px;*/
-    /*}*/
+    input[type='number'] {
+        width: 97%;
+    }
 }
 
 @media (max-width: 601px) {
     .container {
-        margin: 0 5px 0 5px;
+        margin: 0;
+        padding: 0 10px 0 10px;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -127,16 +161,16 @@ h2.subheaderProduct{
         font-size: 1.5em;
     }
 
-    /*.responsive {*/
-    /*    transform: rotate(180deg);*/
-    /*    position:relative; top: -150px; left: 150px;*/
-    /*}*/
+    input[type='number'] {
+        width: 95%;
+    }
 
 }
 
 @media (max-width: 481px) {
     .container {
-        margin: 0 5px 0 5px;
+        margin: 0;
+        padding: 0 10px 0 10px;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -176,11 +210,16 @@ h2.subheaderProduct{
     .custom-size{
         font-size: 1.5em;
     }
+
+    input[type='number'] {
+        width: 94%;
+    }
 }
 
 @media (max-width: 321px) {
     .container {
-        margin: 0 2px 0 2px;
+        margin: 0;
+        padding: 0 1px 0 1px;
         grid-template-areas:
                 'menu'
                 'cart'
@@ -223,6 +262,10 @@ h2.subheaderProduct{
 
     .custom-size{
         font-size: 1.5em;
+    }
+
+    input[type='number'] {
+        width: 92%;
     }
 }
 

@@ -18,6 +18,13 @@
     font-size: 1.3em;
     width: 90%;
 }
+
+input[type='number'] {
+    /*-moz-appearance: textfield;*/
+    width: 90%;
+}
+
+
 .size_input{
     padding: 10px;
     font-size: 1.3em;
@@ -56,23 +63,100 @@
     cursor: pointer;
 }
 
-@media (max-width: 601px) {
+@media (max-width: 801px) {
     .container{
         display: grid;
-        margin: 0 5px;
+        margin: 0;
+        padding: 0;
         grid-template-columns: 1fr;
     }
+    h1.listProduct{
+        font-size: 2.3em;
+    }
+    h2.listSubProduct{
+        font-size: 1.2em;
+    }
     .item{
-        padding: 0 0 15px 0;
+        margin: 0 0 2.0em 0;
+        padding: 0;
     }
     .custom-select {
-        font-size: 5vw;
+        font-size: 2.5vw;
         font-weight: bolder;
         width: 95%;
     }
-    .size_input{
-        font-size: 5vw;
+}
+
+@media (max-width: 601px) {
+    .container{
+        display: grid;
+        margin: 0;
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+    h1.listProduct{
+        font-size: 2.0em;
+    }
+    h2.listSubProduct{
+        font-size: 0.9em;
+    }
+    .item{
+        margin: 0 0 1.5em 0;
+        padding: 0;
+    }
+    .custom-select {
+        font-size: 3.0vw;
         font-weight: bolder;
-        width: 90%;
+        width: 95%;
+    }
+}
+
+@media (max-width: 481px) {
+    .container{
+        display: grid;
+        margin: 0;
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+    h1.listProduct{
+        font-size: 1.8em;
+    }
+    h2.listSubProduct{
+        font-size: 0.9em;
+    }
+    .item{
+        margin: 0 0 1.5em 0;
+        padding: 0;
+    }
+    .custom-select {
+        font-size: 4.0vw;
+        font-weight: bolder;
+        width: 95%;
+    }
+}
+
+@media (max-width: 321px) {
+    .container{
+        display: grid;
+        margin: 0;
+        padding: 0 40px 0 0;
+        grid-template-columns: 1fr;
+    }
+    h1.listProduct{
+        font-size: 1.5em;
+    }
+    h2.listSubProduct{
+        font-size: 0.7em;
+    }
+    .item{
+        margin: 0 0 0.8em 0;
+    }
+    .custom-select {
+        font-size: 5.0vw;
+        font-weight: bolder;
+        width: 95%;
+    }
+    input[type='number'] {
+        width: 85%;
     }
 }

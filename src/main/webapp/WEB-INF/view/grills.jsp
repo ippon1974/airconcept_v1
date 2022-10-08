@@ -29,7 +29,8 @@
     <div style="clear: left"></div>
 </div>
 
-<div style="margin-left: 40px"><h1>Шаблоны вентиляционных решеток</h1>
+<div style="margin-left: 40px">
+    <h1 class="listProduct">Шаблоны вентиляционных решеток</h1>
     <p>
         <a title="Вентиляционные решетки из латуни" href="${pageContext.request.contextPath}/filtergrills?materialid=1&size=3&width=150&height=150">Латунь</a> |
         <a title="Вентиляционные решетки из меди" href="${pageContext.request.contextPath}/filtergrills?materialid=2&size=3&width=150&height=150">Медь</a> |
@@ -66,13 +67,13 @@
                 <div class="col-width">
                     <label for="width">Длина</label>
                 </div>
-                <input class="size_input" type="number" min="120" max="3000" value="" name="width" id="width" required/>
+                <input class="size_input" style="width: 95%" type="number" min="120" max="3000" value="" name="width" id="width" required/>
             </div>
             <div class="item item-4">
                 <div class="col-height">
                     <label for="height">Высота</label>
                 </div>
-                <input class="size_input" type="number" min="60" max="1500" value="" name="height" id="height" required/>
+                <input class="size_input" style="width: 95%" type="number" min="60" max="1500" value="" name="height" id="height" required/>
             </div>
             <div class="item item-5">
                 <input class="button" type="submit" value="Выбрать" />

@@ -51,7 +51,8 @@
 </c:if>
 
 <div style="margin-left: 40px">
-    <h1>Вентиляционные решетки. ${materialname}.  Длина: ${width} мм. Высота: ${height} мм. Толщина листа: ${size} мм.</h1>
+    <h1 class="listProduct">Вентиляционные решетки</h1>
+    <h2 class="listSubProduct">${materialname}.  Длина: ${width} мм. Высота: ${height} мм. Толщина листа: ${size} мм.</h2>
     <p>
         <c:choose>
             <c:when test="${material == 1}">
