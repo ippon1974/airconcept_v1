@@ -30,7 +30,8 @@
 </div>
 
 <div style="margin-left: 40px">
-    <h1 class="listProduct">Шаблоны вентиляционных решеток</h1>
+    <h1 class="listProduct">Шаблоны</h1>
+    <h2 class="listSubProduct">Дизайн ветиляционных решеток</h2>
     <p>
         <a title="Вентиляционные решетки из латуни" href="${pageContext.request.contextPath}/filtergrills?materialid=1&size=3&width=150&height=150">Латунь</a> |
         <a title="Вентиляционные решетки из меди" href="${pageContext.request.contextPath}/filtergrills?materialid=2&size=3&width=150&height=150">Медь</a> |

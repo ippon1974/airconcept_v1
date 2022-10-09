@@ -19,6 +19,7 @@
     width: 90%;
 }
 
+
 input[type='number'] {
     /*-moz-appearance: textfield;*/
     width: 90%;
@@ -47,6 +48,8 @@ input[type='number'] {
     font-size: 15px;
     border-radius: 5px; /* Уголки */
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 
@@ -71,14 +74,17 @@ input[type='number'] {
         grid-template-columns: 1fr;
     }
     h1.listProduct{
-        font-size: 2.3em;
+        font-size: 2.1em;
     }
     h2.listSubProduct{
-        font-size: 1.2em;
+        font-size: 0.9em;
     }
     .item{
-        margin: 0 0 2.0em 0;
+        margin: 0 0 0.2em 0;
         padding: 0;
+    }
+    .button {
+        margin: 1.0em 0 0 0;
     }
     .custom-select {
         font-size: 2.5vw;
@@ -98,11 +104,15 @@ input[type='number'] {
         font-size: 2.0em;
     }
     h2.listSubProduct{
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
     .item{
         margin: 0 0 1.5em 0;
         padding: 0;
+    }
+
+    .button {
+        margin: 1.0em 0 0 0;
     }
     .custom-select {
         font-size: 3.0vw;
@@ -111,21 +121,22 @@ input[type='number'] {
     }
 }
 
-@media (max-width: 481px) {
+@media (max-width: 481px){
     .container{
         display: grid;
         margin: 0;
-        padding: 0;
+        padding: 0 20px 0 0;
         grid-template-columns: 1fr;
     }
     h1.listProduct{
-        font-size: 1.8em;
+        margin: 1em 0 0 0;
+        font-size: 1.5em;
     }
     h2.listSubProduct{
-        font-size: 0.9em;
+        font-size: 0.6em;
     }
     .item{
-        margin: 0 0 1.5em 0;
+        margin: 1em 0 0 0;
         padding: 0;
     }
     .custom-select {

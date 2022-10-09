@@ -79,8 +79,6 @@
             </c:otherwise>
         </c:choose>
     </p>
-
-
 </div>
 
 

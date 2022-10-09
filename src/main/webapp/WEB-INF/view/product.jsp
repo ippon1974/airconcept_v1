@@ -208,13 +208,13 @@
                     <p>Точная стоимость вентиляционной решетки будет известна после всех согласований с заказчиком.</p>
                     <p class="owndesign">Если у вас есть свой дизайн вентиляционной решетки, вы можете отправить чертеж или эскиз на нашу почту: <span class="desmail">box@airconcept.ru</span></p>
                 </div>
-            <c:if test="${totalNdc != null}">
-                <div class="copy_link">
-                <p id="foo">http://${pageContext.request.getServerName()}/catalog/grills?${cartStringGoods}</p>
-                <!-- data-clipboard-target - ссылка на, то что будет копироваться -->
-                <button class="btn" data-clipboard-target="#foo">Копировать ссылку</button>
-                </div>
-            </c:if>
+<%--            <c:if test="${totalNdc != null}">--%>
+<%--                <div class="copy_link">--%>
+<%--                <p id="foo">http://${pageContext.request.getServerName()}/catalog/grills?${cartStringGoods}</p>--%>
+<%--                <!-- data-clipboard-target - ссылка на, то что будет копироваться -->--%>
+<%--                <button class="btn" data-clipboard-target="#foo">Копировать ссылку</button>--%>
+<%--                </div>--%>
+<%--            </c:if>--%>
 
         </div>
 
@@ -239,6 +239,5 @@
         <script src="${pageContext.request.contextPath}/js/bufer.js"></script>
     </div>
 </div>
-
 </body>
 </html>
