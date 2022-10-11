@@ -195,8 +195,8 @@
         </c:if>
 
         <div class="finalCalc">
-            <%--                <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>--%>
-            <%--                <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>--%>
+<%--                            <p>Стоимость материала без раскроя: ${costmatnotcut} руб. + 30% надбавка за материал ${addTaxMat} руб.</p>--%>
+<%--                            <p>Стоимость раскрооя без материала: ${costcutnotmat} руб. + 30% надбавка за раской ${addTaxCut} руб.</p>--%>
             <c:if test="${totalNdc != null}">
                 <div class="pricetotal">
                     <p>Итого: ${totalNdc} руб.</p>

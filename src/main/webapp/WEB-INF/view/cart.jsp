@@ -22,6 +22,7 @@
     <ul class="nav">
         <li><a title="Airconcept" href="/" title="Главная">Airconcept</a></li>
         <li><a title="Шаблоны решеток" href="/catalog/grills">Шаблоны решеток</a></li>
+        <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
         <li><a title="Контакты" href="/contact" title="Контакты">Контакты</a></li>
     </ul>
 </div>

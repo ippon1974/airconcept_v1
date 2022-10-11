@@ -25,6 +25,7 @@
 }
 .count_2{
     align-self: center;
+    width: 50%;
 }
 .delete_2{
     align-self: center;
@@ -87,6 +88,7 @@
 }
 .count_2{
     grid-area: count_2;
+    width: 20%;
 }
 .delete_2{
     grid-area: delete_2;
@@ -104,57 +106,6 @@
     font-size: 15px;
     border-radius: 5px; /* Уголки */
     cursor: pointer;
-}
-
-@media (max-width: 601px) {
-    .container_loop {
-        margin: 0 5px 1.5em 5px;
-        grid-template-areas:
-                'img_2'
-                'desc_2'
-                'type_2'
-                'size_2'
-                'cost_2'
-                'count_2'
-                'delete_2';
-        grid-template-columns: 1fr;
-    }
-
-    .delete_2 a{
-        color: red;
-        font-size: 0.8em;
-    }
-
-    .item_2{
-        /*border: 1px solid black;*/
-        padding: 5px;
-    }
-
-    .container_footer{
-        margin: 0 5px 1em 5px;
-        border-top: 1px solid black;
-        /*margin: 1em 40px 0 40px;*/
-        display: grid;
-        grid-template-areas:
-                'totalcart'
-                'navfooter';
-        grid-template-columns: 1fr;
-    }
-
-    .cart_order_head h1{
-
-    }
-
-    .count_2 input{
-        padding: 5px;
-        font-size: 1.3em;
-    }
-
-    .totalcart{
-        grid-area: totalcart;
-        justify-self: start;
-    }
-
 }
 
 @media (max-width: 810px) {
@@ -202,6 +153,167 @@
     .count_2 input{
         padding: 5px;
         font-size: 1.3em;
+        width: 50%;
+    }
+
+    .totalcart{
+        grid-area: totalcart;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 601px) {
+    .container_loop {
+        margin: 0 5px 1.5em 40px;
+        grid-template-areas:
+                'img_2'
+                'desc_2'
+                'type_2'
+                'size_2'
+                'cost_2'
+                'count_2'
+                'delete_2';
+        grid-template-columns: 1fr;
+    }
+
+    .delete_2 a{
+        color: red;
+        font-size: 0.8em;
+    }
+
+    .item_2{
+        /*border: 1px solid black;*/
+        padding: 5px;
+    }
+
+    .container_footer{
+        margin: 0 5px 1em 40px;
+        border-top: 1px solid black;
+        /*margin: 1em 40px 0 40px;*/
+        display: grid;
+        grid-template-areas:
+                'totalcart'
+                'navfooter';
+        grid-template-columns: 1fr;
+    }
+
+    .cart_order_head h1{
+
+    }
+
+    .count_2 input{
+        padding: 5px;
+        font-size: 1.3em;
+        width: 50%;
+    }
+
+    .totalcart{
+        grid-area: totalcart;
+        justify-self: start;
+    }
+
+}
+
+@media (max-width: 481px) {
+    .container_loop {
+        margin: 0 40px 1.5em 40px;
+        grid-template-areas:
+                'img_2'
+                'desc_2'
+                'type_2'
+                'size_2'
+                'cost_2'
+                'count_2'
+                'delete_2';
+        grid-template-columns: 1fr;
+    }
+
+    .cart_order_head h1{
+        margin: 1em 0 0.5em 40px;
+    }
+
+    .item_2{
+        padding: 10px;
+    }
+
+    .delete_2 a{
+        color: red;
+        font-size: 0.8em;
+    }
+
+    .container_footer{
+        margin: 1em 40px 1em 40px;
+        border-top: 1px solid black;
+        /*margin: 1em 40px 0 40px;*/
+        display: grid;
+        grid-template-areas:
+                'totalcart'
+                'navfooter';
+        grid-template-columns: 1fr;
+    }
+
+    .cart_order_head{
+        margin: 1em 0 0.5em 5px;
+    }
+
+    .count_2 input{
+        padding: 5px;
+        font-size: 1.3em;
+        width: 80%;
+    }
+
+    .totalcart{
+        grid-area: totalcart;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 341px) {
+    .container_loop {
+        margin: 0 40px 1.5em 40px;
+        grid-template-areas:
+                'img_2'
+                'desc_2'
+                'type_2'
+                'size_2'
+                'cost_2'
+                'count_2'
+                'delete_2';
+        grid-template-columns: 1fr;
+    }
+
+    .cart_order_head h1{
+        margin: 1em 0 0.5em 40px;
+    }
+
+    .item_2{
+        padding: 10px;
+    }
+
+    .delete_2 a{
+        color: red;
+        font-size: 0.8em;
+    }
+
+    .container_footer{
+        margin: 1em 40px 1em 40px;
+        border-top: 1px solid black;
+        /*margin: 1em 40px 0 40px;*/
+        display: grid;
+        grid-template-areas:
+                'totalcart'
+                'navfooter';
+        grid-template-columns: 1fr;
+    }
+
+    .cart_order_head{
+        margin: 1em 0 0.5em 5px;
+    }
+
+    .count_2 input{
+        padding: 5px;
+        font-size: 1.3em;
+        width: 90%;
     }
 
     .totalcart{
