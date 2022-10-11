@@ -297,6 +297,10 @@ p.copyring{
     padding: 0 0 0 2em;
 }
 
+.pricetotal{
+   border-top: 1px solid #333333;
+}
+
 .pricetotal p{
     background:black;
     text-transform: uppercase;
@@ -321,6 +325,8 @@ p.copyring{
 .note{
     padding: 10px;
     border: 1px solid #333333;
+    border-left: none;
+    border-right: none;
 }
 .note > p {
     font-size: 0.8em;
