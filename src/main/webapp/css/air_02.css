@@ -110,6 +110,8 @@ fieldset legend{
     font-size: 15px;
     border-radius: 5px; /* Уголки */
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 
@@ -124,15 +126,19 @@ fieldset legend{
     font-size: 15px;
     border-radius: 5px; /* Уголки */
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .cart_add_result{
     margin: 1.5em 0 0 0;
+    border-bottom: 1px solid #333333;
+    padding: 0 0 0.5em 0;
 }
 
 .cart_add_result h3{
     font-size: 1.0em;
-    color: firebrick;
+    color: blanchedalmond;
     text-transform: uppercase;
     font-weight: bold;
 }

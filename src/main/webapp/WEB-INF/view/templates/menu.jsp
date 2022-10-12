@@ -8,6 +8,8 @@
 
 <c:set var="index" value="/WEB-INF/view/index.jsp" />
 <c:set var="grills" value="/WEB-INF/view/grills.jsp" />
+<c:set var="pay" value="/WEB-INF/view/pay.jsp" />
+<c:set var="delivery" value="/WEB-INF/view/delivery.jsp" />
 <c:set var="about" value="/WEB-INF/view/about.jsp" />
 <c:set var="contact" value="/WEB-INF/view/contact.jsp" />
 
@@ -15,6 +17,7 @@
         <ul class="nav">
             <li>Airconcept</li>
             <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
+            <li><a href="${pageContext.request.contextPath}/delivery" title="Доставка">Доставка</a> </li>
             <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
             <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
         </ul>
@@ -24,6 +27,30 @@
     <ul class="nav">
         <li><a href="/" title="Главная">Airconcept</a></li>
         <li>Шаблоны решеток</li>
+        <li><a href="${pageContext.request.contextPath}/pay" title="Оплата">Оплата</a> </li>
+        <li><a href="${pageContext.request.contextPath}/delivery" title="Доставка">Доставка</a> </li>
+        <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
+        <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
+    </ul>
+</c:if>
+
+<c:if test="${uri.equals(pay)}">
+    <ul class="nav">
+        <li><a href="/" title="Главная">Airconcept</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
+        <li>Оплата</li>
+        <li><a href="${pageContext.request.contextPath}/delivery" title="Доставка">Доставка</a> </li>
+        <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
+        <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
+    </ul>
+</c:if>
+
+<c:if test="${uri.equals(delivery)}">
+    <ul class="nav">
+        <li><a href="/" title="Главная">Airconcept</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
+        <li><a href="${pageContext.request.contextPath}/pay" title="Оплата">Оплата</a> </li>
+        <li>Доставка</li>
         <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
         <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
     </ul>
@@ -33,6 +60,8 @@
     <ul class="nav">
         <li><a href="/" title="Главная">Airconcept</a></li>
         <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
+        <li><a href="${pageContext.request.contextPath}/pay" title="Оплата">Оплата</a> </li>
+        <li><a href="${pageContext.request.contextPath}/delivery" title="Доставка">Доставка</a> </li>
         <li>О нас</li>
         <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
     </ul>
@@ -42,6 +71,8 @@
     <ul class="nav">
         <li><a href="/" title="Главная">Airconcept</a></li>
         <li><a href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток">Шаблоны решеток</a> </li>
+        <li><a href="${pageContext.request.contextPath}/pay" title="Оплата">Оплата</a> </li>
+        <li><a href="${pageContext.request.contextPath}/delivery" title="Доставка">Доставка</a> </li>
         <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
         <li>Контакты</li>
     </ul>
@@ -51,6 +82,8 @@
 <ul class="nav">
         <li><a href="${pageContext.request.contextPath}/" title="Главная">Airconcept</a></li>
         <li><a style="color: #ffff00;" href="${pageContext.request.contextPath}/catalog/grills" title="Шаблоны решеток"><strong>Шаблоны решеток</strong></a> </li>
+        <li><a href="${pageContext.request.contextPath}/pay" title="Оплата">Оплата</a></li>
+        <li><a href="${pageContext.request.contextPath}/delivery" title="Доставка">Доставка</a> </li>
         <li><a href="${pageContext.request.contextPath}/about" title="О нас">О нас</a> </li>
         <li><a href="${pageContext.request.contextPath}/contact" title="Контакты">Контакты</a></li>
 </ul>

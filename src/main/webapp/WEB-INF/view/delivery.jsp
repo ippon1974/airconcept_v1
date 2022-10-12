@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/gamburger.css">
-    <meta name="description" content="О нас. Компания AirConcept. Производство вентиляционных решеток в Москве" />
-    <title>О нас</title>
+    <meta name="description" content="Доставка. Компания AirConcept. Производство вентиляционных решеток в Москве" />
+    <title>Доставка</title>
 </head>
 <body>
 
@@ -21,7 +22,7 @@
         <jsp:include page="/WEB-INF/view/templates/menu.jsp" />
     </div>
 
-    <h1>О нас</h1>
+    <h1>Доставка</h1>
     <div style="">
         <div style="float: left; width: 80%; text-align: right">
             <c:if test="${cartService != null}">
@@ -31,9 +32,12 @@
         <div style="clear: left"></div>
     </div>
 
-    <p></p>Компания «Airconcept» была создана в 2014 году.
-    <p>Наш осноыной вид деятельности производство изделий из цветного, черного металла, а так же изделий из природного и искусственного камня.</p>
-    <p>За это время накоплен опыт, знания, расширилась собственная клиентская база.</p>
+    <h2>Москва</h2>
+    <p>В пределах МКАД &mdash; 1000 руб</p>
+
+    <h2>Россия</h2>
+    <p>Любой транспортной компанией</p>
+
     <div>
         <jsp:include page="/WEB-INF/view/templates/footer.jsp" />
     </div>
