@@ -96,6 +96,7 @@ public class FilterGrillServlet extends HttpServlet {
                 // Общая таблица налогов и надбавок
                 tax = taxService.getByTaxID(1);
                 BigDecimal percent = new BigDecimal (100);
+                BigDecimal minusPercent = new BigDecimal(20);
                 BigDecimal taxNdc = new BigDecimal(tax.getTaxndc());
                 BigDecimal taxIo = new BigDecimal(tax.getTaxio());
                 BigDecimal taxMat = new BigDecimal(tax.getCoeffmat());
@@ -105,6 +106,8 @@ public class FilterGrillServlet extends HttpServlet {
                 BigDecimal total = costmatnotcut.add(costcutnotmat).add (addTaxMat).add(addTaxCut);
                 BigDecimal addNdc = total.multiply(taxNdc).divide(percent);
                 BigDecimal totalNdc = total.add (addNdc);
+                BigDecimal totalMinusPercent = totalNdc.multiply(minusPercent);
+                totalNdc = totalNdc.subtract(totalMinusPercent.divide(percent));
                 totalNdc = totalNdc.setScale (0, RoundingMode.CEILING);
                 mf.setGname (listGrills.get (i).getGname ());
                 mf.setMaterialid(materialID);
@@ -118,6 +121,7 @@ public class FilterGrillServlet extends HttpServlet {
             }
 
             req.setAttribute ("listFilterCalcs", listFilterCalcs);
+
             req.setAttribute ("listGrills", listGrills);
             req.setAttribute ("material", materialID);
             req.setAttribute ("size", sizeID);
