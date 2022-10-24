@@ -204,6 +204,7 @@ public class GrillsServlet extends HttpServlet {
 
             // Общая таблица налогов и надбавок
             tax = taxService.getByTaxID(1);
+            BigDecimal minusPercent = new BigDecimal(20);
             BigDecimal percent = new BigDecimal (100);
             BigDecimal taxNdc = new BigDecimal(tax.getTaxndc());
             BigDecimal taxIo = new BigDecimal(tax.getTaxio());
@@ -214,11 +215,13 @@ public class GrillsServlet extends HttpServlet {
             BigDecimal total = costmatnotcut.add(costcutnotmat).add (addTaxMat).add(addTaxCut);
             BigDecimal addNdc = total.multiply(taxNdc).divide(percent);
             BigDecimal totalNdc = total.add (addNdc);
+            BigDecimal totalNdcMinusPrecent = totalNdc.multiply(minusPercent);
             totalNdc = totalNdc.setScale (0, RoundingMode.CEILING);
             req.setAttribute ("addTaxMat", addTaxMat);
             req.setAttribute ("addTaxCut", addTaxCut);
             req.setAttribute ("total", total);
-            req.setAttribute ("totalNdc", totalNdc);
+//            req.setAttribute ("totalNdc", totalNdc);
+            req.setAttribute ("totalNdc", totalNdc.subtract(totalNdcMinusPrecent.divide(percent)).setScale(0, RoundingMode.CEILING));
 
             // Пишим данные в сессию
             session.setAttribute("transliterationsSession", modelGrill.getGtransliterations());
