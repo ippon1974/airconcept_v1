@@ -218,7 +218,6 @@
 
         </div>
 
-
     </div>
     <div class="item img">
         <c:if test="${material == null}">
