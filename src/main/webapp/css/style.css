@@ -102,6 +102,10 @@ select {
         grid-template-columns: 1fr;
     }
 
+    .imglogo{
+        display: none;
+    }
+
     .mainpageheader {
         font-size: 2.4em;
     }
@@ -141,6 +145,10 @@ select {
                 'img'
                 'footer';
         grid-template-columns: 1fr;
+    }
+
+    .imglogo{
+        display: none;
     }
 
     h1.productInfoHead{
@@ -191,6 +199,10 @@ select {
                 'img'
                 'footer';
         grid-template-columns: 1fr;
+    }
+
+    .imglogo{
+        display: none;
     }
 
     .item{
@@ -244,6 +256,10 @@ select {
                 'img'
                 'footer';
         grid-template-columns: 1fr;
+    }
+
+    .imglogo{
+        display: none;
     }
 
     h1.mainpageheader {
