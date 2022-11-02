@@ -21,7 +21,7 @@
 
 <div style="padding: 0 0 0 40px">
     <jsp:include page="/WEB-INF/view/templates/menu_gamburger.jsp" />
-    <a href="/" title="Airconcept"><img class="imglogo" src="${pageContext.request.contextPath}/img/logo_48.svg" alt="Airconcept"></a>
+    <a href="/" title="Airconcept"><img class="imglogo" src="${pageContext.request.contextPath}/img/logo_48.png" alt="Airconcept"></a>
     <ul class="nav">
         <li class="navmain"><a title="Airconcept" href="/" title="Главная">Airconcept</a></li>
         <li><a title="Шаблоны решеток" href="/catalog/grills">Шаблоны решеток</a></li>
