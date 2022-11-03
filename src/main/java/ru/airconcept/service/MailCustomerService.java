@@ -52,7 +52,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "");
+                return new PasswordAuthentication("post2074@gmail.com", "fromoffice");
             }
 
         });
@@ -171,7 +171,7 @@ public class MailCustomerService {
         session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("post2074@gmail.com", "");
+                return new PasswordAuthentication("post2074@gmail.com", "fromoffice");
             }
 
         });
@@ -258,7 +258,7 @@ public class MailCustomerService {
             // Send message
             Transport.send(message);
 
-            System.out.println("Sent message successfully....");
+//            System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }

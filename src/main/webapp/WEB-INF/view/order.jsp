@@ -90,7 +90,7 @@
         <input type="checkbox" name="is_privacy" value="1" required="required"> <label style="display: inline-block">Даю согласие на обработку моих <a target="_blank" href="${pageContext.request.contextPath}/privacy">персональных данных</a></label>
     </div>
     <div class="order sendorder">
-        <input type="submit" value="Оформить заказ">
+        <input class="button" type="submit" value="Оформить заказ">
     </div>
 </div>
 </form>

@@ -94,16 +94,34 @@
     }
 }
 
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px; /* Уголки */
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 @media (max-width: 810px) {
     .container_order_loop {
         margin: 0 40px;
         grid-template-columns: 1fr;
     }
-    .line{
+
+    .line {
         margin: 1em 0;
         border-bottom: 1px solid gray;
     }
 }
+
+
 
 
 
