@@ -9,6 +9,13 @@
     url('/fonts/Roboto.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Susan Classic';
+    src: url("/fonts/Susan Classic W08 Book.ttf") format("truetype");
+    url('/fonts/Susan Classic W08 Book.woff') format('woff'),
+    url('/fonts/Susan Classic W08 Book.ttf') format('truetype');
+}
+
 body {
     background: black;
     color: gainsboro;
