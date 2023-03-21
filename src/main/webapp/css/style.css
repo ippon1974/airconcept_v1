@@ -1,6 +1,14 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
 /*@import url(//db.onlinewebfonts.com/c/429d980b8384fbd50ca346e3a8a0e6e5?family=Susan+Classic);*/
 
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("/fonts/Roboto.ttf") format("truetype");
+    url('/fonts/Roboto.woff') format('woff'),
+    url('/fonts/Roboto.ttf') format('truetype');
+}
+
 body {
     background: black;
     color: gainsboro;
