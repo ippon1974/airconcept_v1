@@ -10,7 +10,7 @@ public class ConnectionFactory {
     public static final String DB_URL = "jdbc:mysql://23.105.246.179:3306/test_airconcept?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     public static final String LOGIN = "airconcept";
 
-    public static final String PASSWORD = "office lsadjfasld;j;l j;ljl;kjl;k";
+    public static final String PASSWORD = "offic e ol";
 
     private static ConnectionFactory instance;
 
